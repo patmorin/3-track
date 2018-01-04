@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180104095259" modified="D:20180104133258"/>
+<info created="D:20180104095259" modified="D:20180104133728"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -278,7 +278,7 @@ h
 <layer name="beta"/>
 <layer name="gamma"/>
 <view layers="alpha beta gamma" active="gamma"/>
-<path layer="gamma" stroke="brew4" pen="ultrafat">
+<path layer="gamma" stroke="brew4" pen="ultrafat" cap="1">
 265.427 468.348 m
 287.827 496.14 l
 332.627 516.091 l
@@ -294,10 +294,7 @@ h
 395.562 469.642 l
 </path>
 <text layer="alpha" matrix="0.7 0 0 0.7 142.227 162.448" transformations="translations" pos="272 432" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" halign="center" valign="top" style="math">y_1</text>
-<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="320 448" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="384 448" size="normal" stroke="black"/>
 <text matrix="0.7 0 0 0.7 164.627 162.448" transformations="translations" pos="272 432" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" halign="center" valign="top" style="math">z_1</text>
-<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="416 448" size="normal" stroke="black"/>
 <path matrix="0.7 0 0 0.7 52.6268 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
 432 448 m
 464 487.703 l
@@ -897,8 +894,7 @@ h
 444.627 563.849 m
 467.027 580.348 l
 </path>
-<use layer="alpha" matrix="1 0 0 1 183.465 -1.2946" name="mark/disk(sx)" pos="149.162 480.152" size="small" stroke="black"/>
-<use matrix="1 0 0 1 183.465 -1.2946" name="mark/disk(sx)" pos="149.162 497.053" size="small" stroke="black"/>
+<use layer="alpha" matrix="1 0 0 1 183.465 -1.2946" name="mark/disk(sx)" pos="149.162 497.053" size="small" stroke="black"/>
 <use matrix="1 0 0 1 183.465 9.90537" name="mark/disk(sx)" pos="171.562 480.907" size="small" stroke="black"/>
 <use matrix="1 0 0 1 183.465 9.90537" name="mark/disk(sx)" pos="171.562 498.713" size="small" stroke="black"/>
 <use matrix="1 0 0 1 183.465 9.90537" name="mark/disk(sx)" pos="171.562 513.954" size="small" stroke="black"/>
@@ -919,5 +915,9 @@ h
 <text matrix="1 0 0 1 -10 -2" transformations="translations" pos="434.831 515.515" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" valign="top" style="math">y_4</text>
 <text matrix="1 0 0 1 -3 8" transformations="translations" pos="451.184 534.304" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" valign="top" style="math">z_5</text>
 <text matrix="1 0 0 1 18.572 27.8323" transformations="translations" pos="451.184 534.304" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="top" style="math">x_6</text>
+<use layer="alpha" matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="320 448" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="384 448" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 183.465 -1.2946" name="mark/disk(sx)" pos="149.162 480.152" size="small" stroke="black"/>
+<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="416 448" size="normal" stroke="black"/>
 </page>
 </ipe>
