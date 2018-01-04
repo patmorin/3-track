@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180103154953" modified="D:20180103155028"/>
+<info created="D:20180103154953" modified="D:20180104113525"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -220,13 +220,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
-<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
-<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -254,31 +254,31 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" matrix="0.7 0 0 0.7 95.714 133.884" stroke="black">
-240 720 m
-240 592 l
-</path>
-<path matrix="0.7 0 0 0.7 95.714 167.484" stroke="black">
-336 464 m
-448 464 l
-</path>
-<use matrix="0.7 0 0 0.7 95.714 167.484" name="mark/disk(sx)" pos="416 464" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 95.714 167.484" name="mark/disk(sx)" pos="352 464" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 95.714 167.484" name="mark/disk(sx)" pos="240 608" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 95.714 173.084" transformations="translations" pos="416 448" stroke="black" type="label" width="9.649" height="4.294" depth="1.49" halign="center" valign="top" style="math">v_a</text>
-<text matrix="0.7 0 0 0.7 50.914 173.084" transformations="translations" pos="416 448" stroke="black" type="label" width="43.022" height="7.489" depth="3.95" halign="center" valign="top" style="math">x_j&apos;=v_{a-3}</text>
-<path matrix="0.7 0 0 0.7 95.714 167.484" stroke="orange" pen="ultrafat">
+<path layer="alpha" matrix="0.7 0 0 0.7 95.714 167.484" stroke="orange" pen="ultrafat">
 352 464 m
 336 560
 240 608 c
 </path>
 <text matrix="0.7 0 0 0.7 103.414 167.484" transformations="translations" pos="224 608" stroke="black" type="label" width="44.907" height="4.29" depth="2.85" halign="right" valign="baseline" style="math">y_{j&apos;}=v_{a-2}</text>
-<use matrix="0.7 0 0 0.7 95.714 167.484" name="mark/disk(sx)" pos="240 656" size="normal" stroke="black"/>
 <text matrix="0.7 0 0 0.7 103.414 201.084" transformations="translations" pos="224 608" stroke="black" type="label" width="42.102" height="4.29" depth="2.85" halign="right" valign="baseline" style="math">y_{j}=v_{a+1}</text>
 <path matrix="0.7 0 0 0.7 95.714 167.484" stroke="orange" pen="ultrafat">
 416 464 m
 384 624
 240 656 c
 </path>
+<path matrix="0.7 0 0 0.7 95.714 133.884" stroke="black">
+240 720 m
+240 592 l
+</path>
+<use matrix="0.7 0 0 0.7 95.714 167.484" name="mark/disk(sx)" pos="240 608" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 95.714 167.484" name="mark/disk(sx)" pos="240 656" size="normal" stroke="black"/>
+<path matrix="0.7 0 0 0.7 95.714 167.484" stroke="black">
+336 464 m
+448 464 l
+</path>
+<use matrix="0.7 0 0 0.7 95.714 167.484" name="mark/disk(sx)" pos="416 464" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 95.714 167.484" name="mark/disk(sx)" pos="352 464" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 95.714 173.084" transformations="translations" pos="416 448" stroke="black" type="label" width="31.943" height="4.294" depth="1.49" halign="center" valign="top" style="math">x_i=v_a</text>
+<text matrix="0.7 0 0 0.7 50.914 173.084" transformations="translations" pos="416 448" stroke="black" type="label" width="44.836" height="4.294" depth="2.32" halign="center" valign="top" style="math">x_{i&apos;}=v_{a-3}</text>
 </page>
 </ipe>

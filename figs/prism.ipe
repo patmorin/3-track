@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180104095259" modified="D:20180104095348"/>
+<info created="D:20180104095259" modified="D:20180104133258"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -220,13 +220,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
-<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
-<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -275,196 +275,30 @@ h
 </ipestyle>
 <page>
 <layer name="alpha"/>
-<view layers="alpha" active="alpha"/>
-<path layer="alpha" matrix="0.7 0 0 0.7 0.0617423 156.042" fill="brew8" opacity="50%">
-320 608 m
-320 448 l
-384 448 l
-384 608 l
-h
+<layer name="beta"/>
+<layer name="gamma"/>
+<view layers="alpha beta gamma" active="gamma"/>
+<path layer="gamma" stroke="brew4" pen="ultrafat">
+265.427 468.348 m
+287.827 496.14 l
+332.627 516.091 l
+355.027 544.502 l
+377.427 566.738 l
+422.227 580.348 l
+444.627 580.348 l
+467.027 580.348 l
 </path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-256 448 m
-192 448 l
+<text layer="alpha" matrix="0.7 0 0 0.7 97.4268 162.448" transformations="translations" pos="272 432" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" halign="center" valign="top" style="math">x_1</text>
+<path layer="beta" matrix="1 0 0 1 -40.5349 -1.29367" stroke="brew4" pen="ultrafat" cap="1" join="1">
+328.362 469.642 m
+395.562 469.642 l
 </path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-256 487.703 m
-192 516.205 l
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-192 608 m
-256 588.557 l
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" fill="brew8" opacity="50%">
-192 608 m
-192 448 l
-256 448 l
-256 608 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" fill="brew3" opacity="50%">
-192 608 m
-192 448 l
-224 432 l
-224 592 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" fill="brew7" opacity="50%">
-256 608 m
-224 592 l
-224 432 l
-256 448 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" stroke="brew4" pen="ultrafat" cap="1">
-224 432 m
-256 487.703 l
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-192 516.205 m
-224 540.792 l
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-256 588.557 m
-224 540.792 l
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-192 448 m
-224 432 l
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-192 608 m
-224 592 l
-</path>
-<path matrix="0.7 0 0 0.7 14.7617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-224 592 m
-256 608 l
-</path>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="224 592" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="256 608" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="192 608" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="224 432" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="192 448" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="256 448" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 11.9617 156.042" transformations="translations" pos="264.456 447.091" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="baseline" style="math">x_1</text>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="256 487.703" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 19.6617 156.042" transformations="translations" pos="180.558 447.091" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" halign="right" valign="baseline" style="math">y_1</text>
-<text matrix="0.7 0 0 0.7 17.5617 160.942" transformations="translations" pos="220.258 421.154" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" halign="center" valign="top" style="math">z_1</text>
-<text matrix="0.7 0 0 0.7 10.5617 158.842" transformations="translations" pos="265.25 483.35" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="baseline" style="math">x_2</text>
-<text matrix="0.7 0 0 0.7 9.16174 154.642" transformations="translations" pos="266.309 611.976" stroke="black" type="label" width="15.005" height="4.29" depth="2.49" valign="baseline" style="math">x_{n_1}</text>
-<text matrix="0.7 0 0 0.7 14.0617 155.012" transformations="translations" pos="177.647 611.446" stroke="black" type="label" width="14.196" height="4.29" depth="2.49" valign="baseline" style="math">y_{n_2}</text>
-<text matrix="0.7 0 0 0.7 14.7617 158.842" transformations="translations" pos="224 583.127" stroke="black" type="label" width="13.944" height="4.29" depth="2.49" halign="center" valign="top" style="math">z_{n_3}</text>
-<path matrix="0.7 0 0 0.7 89.6617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-256 448 m
-192 448 l
-</path>
-<path matrix="0.7 0 0 0.7 89.6617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-256 487.703 m
-192 516.205 l
-</path>
-<path matrix="0.7 0 0 0.7 89.6617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-192 608 m
-256 588.557 l
-</path>
-<use matrix="0.7 0 0 0.7 89.6617 156.042" name="mark/disk(sx)" pos="192 448" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 89.6617 156.042" name="mark/disk(sx)" pos="256 448" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 86.8617 156.042" transformations="translations" pos="264.456 447.091" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="baseline" style="math">x_1</text>
-<text matrix="0.7 0 0 0.7 94.5617 156.042" transformations="translations" pos="180.558 447.091" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" halign="right" valign="baseline" style="math">y_1</text>
-<text matrix="0.7 0 0 0.7 89.6617 175.642" transformations="translations" pos="224 583.127" stroke="black" type="label" width="13.944" height="4.29" depth="2.49" halign="center" valign="bottom" style="math">z_{n_3}</text>
-<path matrix="0.7 0 0 0.7 0.0617423 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-320 608 m
-384 608 l
-</path>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="192 516.205" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="224 540.792" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 14.7617 156.042" name="mark/disk(sx)" pos="256 588.557" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 0.0617423 156.042" name="mark/disk(sx)" pos="384 588.557" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 89.6617 156.042" name="mark/disk(sx)" pos="192 608" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 88.9617 155.013" transformations="translations" pos="177.647 611.446" stroke="black" type="label" width="14.196" height="4.29" depth="2.49" valign="baseline" style="math">y_{n_2}</text>
-<use matrix="0.7 0 0 0.7 89.6617 156.042" name="mark/disk(sx)" pos="256 608" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 84.0617 154.642" transformations="translations" pos="266.309 611.976" stroke="black" type="label" width="15.005" height="4.29" depth="2.49" valign="baseline" style="math">x_{n_1}</text>
-<path matrix="0.7 0 0 0.7 0.0617423 156.042" fill="brew3" opacity="50%">
-320 608 m
-320 448 l
-352 448 l
-352 608 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 0.0617423 156.042" fill="brew7" opacity="50%">
-352 608 m
-352 448 l
-384 448 l
-384 608 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 149.162 156.042" fill="brew7" opacity="50%">
-224 448 m
-256 448 l
-256 487.703 l
-h
-</path>
-<path matrix="-0.7 0 0 0.7 507.562 156.042" fill="brew8" opacity="50%">
-192 516.205 m
-192 448 l
-256 448 l
-256 487.703 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 238.762 156.042" fill="brew3" opacity="50%">
-192 516.205 m
-192 448 l
-224 448 l
-224 556.792 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 238.762 156.042" fill="brew7" opacity="50%">
-224 556.792 m
-224 448 l
-256 487.703 l
-256 588.557 l
-h
-</path>
-<path matrix="-0.7 0 0 0.7 597.162 156.042" fill="brew8" opacity="50%">
-192 516.205 m
-256 487.703 l
-256 588.557 l
-192 608 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 328.362 156.042" fill="brew3" opacity="50%">
-192 516.205 m
-224 556.792 l
-224 608 l
-192 608 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 328.362 156.042" fill="brew7" opacity="50%">
-224 608 m
-224 556.792 l
-256 588.557 l
-256 608 l
-</path>
-<path matrix="-0.7 0 0 0.7 686.762 156.042" fill="brew8" opacity="50%">
-192 608 m
-256 588.557 l
-256 608 l
-h
-</path>
-<path matrix="0.7 0 0 0.7 0.0617423 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-320 516.205 m
-352 556.792 l
-352 556.792 l
-</path>
-<path matrix="0.7 0 0 0.7 0.0617423 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-352 556.792 m
-384 588.557 l
-</path>
-<path matrix="0.7 0 0 0.7 0.0617423 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-352 448 m
-384 487.703 l
-</path>
-<use matrix="0.7 0 0 0.7 89.6617 167.242" name="mark/disk(sx)" pos="224 592" size="normal" stroke="black"/>
-<path matrix="0.7 0 0 0.7 93.1617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
+<text layer="alpha" matrix="0.7 0 0 0.7 142.227 162.448" transformations="translations" pos="272 432" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" halign="center" valign="top" style="math">y_1</text>
+<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="320 448" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="384 448" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 164.627 162.448" transformations="translations" pos="272 432" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" halign="center" valign="top" style="math">z_1</text>
+<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="416 448" size="normal" stroke="black"/>
+<path matrix="0.7 0 0 0.7 52.6268 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
 432 448 m
 464 487.703 l
 528 516.205 l
@@ -472,44 +306,618 @@ h
 592 588.557 l
 656 608 l
 </path>
-<path matrix="0.7 0 0 0.7 93.1617 156.042" stroke="brew4" pen="ultrafat" cap="1" join="1">
-304 448 m
-336 487.703 l
-400 516.205 l
-432 556.792 l
-464 588.557 l
-528 608 l
+<path layer="gamma" matrix="1 0 0 1 49.0648 -1.29413" stroke="brew4" pen="ultrafat" cap="1" join="1">
+462.762 581.642 m
+507.562 581.642 l
 </path>
-<text matrix="0.7 0 0 0.7 115.562 163.742" transformations="translations" pos="272 432" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" halign="center" valign="top" style="math">z_1</text>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="288 448" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="416 448" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 205.162 163.742" transformations="translations" pos="272 432" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" halign="center" valign="top" style="math">z_1</text>
-<text matrix="0.7 0 0 0.7 137.962 163.742" transformations="translations" pos="272 432" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" halign="center" valign="top" style="math">x_1</text>
-<use matrix="0.7 0 0 0.7 0.0617423 156.042" name="mark/disk(sx)" pos="320 516.205" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 0.0617423 156.042" name="mark/disk(sx)" pos="352 556.792" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 89.6617 156.042" name="mark/disk(sx)" pos="256 487.703" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 85.4617 158.842" transformations="translations" pos="265.25 483.35" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="baseline" style="math">x_2</text>
-<use matrix="0.7 0 0 0.7 89.6617 167.242" name="mark/disk(sx)" pos="224 432" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 92.4617 172.142" transformations="translations" pos="220.258 421.154" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" halign="center" valign="top" style="math">z_1</text>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="320 487.703" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="384 516.205" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="416 556.792" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="448 588.557" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="512 608" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="640 608" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="576 588.557" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="512 516.205" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="448 487.703" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 112.762 149.987" transformations="translations" pos="304 496" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" halign="right" valign="baseline" style="math">x_2</text>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="320 448" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 182.762 163.742" transformations="translations" pos="272 432" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" halign="center" valign="top" style="math">y_1</text>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="384 448" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 207.262 147.887" transformations="translations" pos="304 496" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="top" style="math">x_2</text>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="544 608" size="normal" stroke="black"/>
-<use matrix="0.7 0 0 0.7 104.362 156.042" name="mark/disk(sx)" pos="576 608" size="normal" stroke="black"/>
-<text matrix="0.7 0 0 0.7 115.562 159.542" transformations="translations" pos="496 608" stroke="black" type="label" width="14.196" height="4.29" depth="2.49" halign="center" valign="baseline" style="math">y_{n_2}</text>
-<text matrix="0.7 0 0 0.7 137.962 159.542" transformations="translations" pos="496 608" stroke="black" type="label" width="13.944" height="4.29" depth="2.49" halign="center" valign="baseline" style="math">z_{n_3}</text>
-<text matrix="0.7 0 0 0.7 160.362 159.542" transformations="translations" pos="496 608" stroke="black" type="label" width="15.005" height="4.29" depth="2.49" halign="center" valign="baseline" style="math">x_{n_1}</text>
-<text matrix="0.7 0 0 0.7 205.162 159.542" transformations="translations" pos="496 608" stroke="black" type="label" width="14.196" height="4.29" depth="2.49" halign="center" valign="baseline" style="math">y_{n_2}</text>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="brew1" cap="1" join="1">
+328.362 469.642 m
+373.162 480.151 l
+</path>
+<path layer="alpha" matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 574.316 m
+231.062 581.642 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+193.962 574.316 m
+149.162 581.642 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 543.532 m
+231.062 581.642 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 543.532 m
+231.062 550.775 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 543.532 m
+231.062 538.25 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+231.062 517.385 m
+275.862 543.532 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+231.062 517.385 m
+275.862 534.477 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 522.103 m
+231.062 517.385 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 469.642 m
+231.062 517.385 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 469.642 m
+231.062 497.053 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 469.642 m
+231.062 480.152 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+193.962 543.532 m
+149.162 517.385 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 517.385 m
+193.962 522.103 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+193.962 534.477 m
+149.162 517.385 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 538.25 m
+193.962 534.477 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+193.962 543.532 m
+149.162 538.25 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+193.962 543.532 m
+149.162 550.775 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 581.642 m
+193.962 543.532 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 480.152 m
+193.962 469.642 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 497.053 m
+193.962 469.642 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 517.385 m
+193.962 469.642 l
+</path>
+<path matrix="0.7 0 0 0.7 -33.4732 154.748" fill="brew8" opacity="50%">
+320 608 m
+320 448 l
+384 448 l
+384 608 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+256 448 m
+192 448 l
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+256 487.703 m
+192 516.205 l
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+192 608 m
+256 588.557 l
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" fill="brew8" opacity="70%">
+192 608 m
+192 448 l
+256 448 l
+256 608 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" fill="brew3" opacity="70%">
+192 608 m
+192 448 l
+224 432 l
+224 592 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" fill="brew7" opacity="70%">
+256 608 m
+224 592 l
+224 432 l
+256 448 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" stroke="brew4" pen="ultrafat" cap="1">
+224 432 m
+256 487.703 l
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+192 516.205 m
+224 540.792 l
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+256 588.557 m
+224 540.792 l
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+192 448 m
+224 432 l
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+192 608 m
+224 592 l
+</path>
+<path matrix="0.7 0 0 0.7 -25.7732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+224 592 m
+256 608 l
+</path>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="224 592" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="256 608" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="192 608" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="224 432" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="192 448" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="256 448" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 -28.5732 154.748" transformations="translations" pos="264.456 447.091" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="baseline" style="math">x_1</text>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="256 487.703" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 -20.8732 154.748" transformations="translations" pos="180.558 447.091" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" halign="right" valign="baseline" style="math">y_1</text>
+<text matrix="0.7 0 0 0.7 -22.9732 159.648" transformations="translations" pos="220.258 421.154" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" halign="center" valign="top" style="math">z_1</text>
+<text matrix="0.7 0 0 0.7 -29.9732 157.548" transformations="translations" pos="265.25 483.35" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="baseline" style="math">x_2</text>
+<text matrix="0.7 0 0 0.7 -31.3732 156.644" transformations="translations" pos="266.309 611.976" stroke="black" type="label" width="15.005" height="4.29" depth="2.49" valign="baseline" style="math">x_{n_1}</text>
+<text matrix="0.7 0 0 0.7 -15.4732 157.014" transformations="translations" pos="177.647 611.446" stroke="black" type="label" width="14.196" height="4.29" depth="2.49" halign="right" valign="baseline" style="math">y_{n_2}</text>
+<text matrix="0.7 0 0 0.7 -25.7732 157.548" transformations="translations" pos="224 583.127" stroke="black" type="label" width="13.944" height="4.29" depth="2.49" halign="center" valign="top" style="math">z_{n_3}</text>
+<path matrix="0.7 0 0 0.7 56.1268 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+256 487.703 m
+192 516.205 l
+</path>
+<path matrix="0.7 0 0 0.7 56.1268 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+192 608 m
+256 588.557 l
+</path>
+<text matrix="0.7 0 0 0.7 53.3268 154.748" transformations="translations" pos="264.456 447.091" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="baseline" style="math">x_1</text>
+<text matrix="0.7 0 0 0.7 61.0268 154.748" transformations="translations" pos="180.558 447.091" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" halign="right" valign="baseline" style="math">y_1</text>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="192 516.205" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="224 540.792" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 -25.7732 154.748" name="mark/disk(sx)" pos="256 588.557" size="normal" stroke="black"/>
+<path matrix="0.7 0 0 0.7 -33.4732 154.748" fill="brew3" opacity="70%">
+320 608 m
+320 448 l
+352 448 l
+352 608 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 -33.4732 154.748" fill="brew7" opacity="70%">
+352 608 m
+352 448 l
+384 448 l
+384 608 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 108.627 154.748" fill="brew7" opacity="70%">
+224 448 m
+256 448 l
+256 487.703 l
+h
+</path>
+<path matrix="-0.7 0 0 0.7 467.027 154.748" fill="brew8" opacity="70%">
+192 516.205 m
+192 448 l
+256 448 l
+256 487.703 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 198.227 154.748" fill="brew3" opacity="70%">
+192 516.205 m
+192 448 l
+224 448 l
+224 556.792 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 198.227 154.748" fill="brew7" opacity="70%">
+224 556.792 m
+224 448 l
+256 487.703 l
+256 588.557 l
+h
+</path>
+<path matrix="-0.7 0 0 0.7 556.627 154.748" fill="brew8" opacity="70%">
+192 516.205 m
+256 487.703 l
+256 588.557 l
+192 608 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 287.827 154.748" fill="brew3" opacity="70%">
+192 516.205 m
+224 556.792 l
+224 608 l
+192 608 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 287.827 154.748" fill="brew7" opacity="70%">
+224 608 m
+224 556.792 l
+256 588.557 l
+256 608 l
+</path>
+<path matrix="-0.7 0 0 0.7 646.227 154.748" fill="brew8" opacity="70%">
+192 608 m
+256 588.557 l
+256 608 l
+h
+</path>
+<path matrix="0.7 0 0 0.7 -33.4732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+320 516.205 m
+352 556.792 l
+352 556.792 l
+</path>
+<path matrix="0.7 0 0 0.7 -33.4732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+352 556.792 m
+384 588.557 l
+</path>
+<path matrix="0.7 0 0 0.7 -33.4732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+352 448 m
+384 487.703 l
+</path>
+<use matrix="0.7 0 0 0.7 -33.4732 154.748" name="mark/disk(sx)" pos="320 516.205" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 -33.4732 154.748" name="mark/disk(sx)" pos="352 556.792" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 56.1268 154.748" name="mark/disk(sx)" pos="256 487.703" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 51.9268 157.548" transformations="translations" pos="265.25 483.35" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="baseline" style="math">x_2</text>
+<text matrix="0.7 0 0 0.7 166.727 146.593" transformations="translations" pos="304 496" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="top" style="math">x_2</text>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="149.162 480.152" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="149.162 497.053" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="171.562 480.907" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="171.562 498.713" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="171.562 513.954" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="193.962 534.477" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="193.962 522.103" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="149.162 550.775" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="171.562 553.944" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="193.962 543.532" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="149.162 538.25" size="small" stroke="black"/>
+<use matrix="1 0 0 1 -40.5349 -1.29367" name="mark/disk(sx)" pos="193.962 574.316" size="small" stroke="black"/>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 480.152 m
+171.562 480.907 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 497.053 m
+171.562 498.713 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 497.053 m
+171.562 513.954 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 497.053 m
+171.562 480.907 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+149.162 469.642 m
+171.562 480.907 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 534.596 m
+149.162 497.053 l
+</path>
+<path matrix="0.7 0 0 0.7 56.1268 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+256 448 m
+192 448 l
+</path>
+<use matrix="0.7 0 0 0.7 56.1268 154.748" name="mark/disk(sx)" pos="192 448" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 56.1268 154.748" name="mark/disk(sx)" pos="256 448" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 56.1268 165.948" name="mark/disk(sx)" pos="224 432" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 58.9268 170.848" transformations="translations" pos="220.258 421.154" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" halign="center" valign="top" style="math">z_1</text>
+<text matrix="0.7 0 0 0.7 56.1268 174.348" transformations="translations" pos="224 583.127" stroke="black" type="label" width="13.944" height="4.29" depth="2.49" halign="center" valign="bottom" style="math">z_{n_3}</text>
+<path matrix="0.7 0 0 0.7 -33.4732 154.748" stroke="brew4" pen="ultrafat" cap="1" join="1">
+320 608 m
+384 608 l
+</path>
+<use matrix="0.7 0 0 0.7 56.1268 165.948" name="mark/disk(sx)" pos="224 592" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 56.1268 154.748" name="mark/disk(sx)" pos="192 608" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 55.4268 157.015" transformations="translations" pos="177.647 611.446" stroke="black" type="label" width="14.196" height="4.29" depth="2.49" valign="baseline" style="math">y_{n_2}</text>
+<use matrix="0.7 0 0 0.7 56.1268 154.748" name="mark/disk(sx)" pos="256 608" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 50.5268 156.644" transformations="translations" pos="266.309 611.976" stroke="black" type="label" width="15.005" height="4.29" depth="2.49" valign="baseline" style="math">x_{n_1}</text>
+<use matrix="0.7 0 0 0.7 -33.4732 154.748" name="mark/disk(sx)" pos="384 588.557" size="normal" stroke="black"/>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+193.962 568.031 m
+171.562 513.954 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 513.954 m
+193.962 543.532 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 513.954 m
+193.962 534.477 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+193.962 534.477 m
+171.562 498.713 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 498.713 m
+193.962 522.103 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+193.962 522.103 m
+171.562 480.907 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 480.907 m
+193.962 497.434 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+193.962 581.642 m
+171.562 553.944 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 553.944 m
+149.162 550.775 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 570.442 m
+149.162 550.775 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 553.944 m
+149.162 538.25 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 534.596 m
+149.162 538.25 l
+</path>
+<use matrix="1 0 0 1 41.3648 -1.29413" name="mark/disk(sx)" pos="149.162 480.152" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 -1.29413" name="mark/disk(sx)" pos="149.162 497.053" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 -1.29413" name="mark/disk(sx)" pos="149.162 550.775" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 -1.29413" name="mark/disk(sx)" pos="149.162 538.25" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 9.90587" name="mark/disk(sx)" pos="171.562 480.907" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 9.90587" name="mark/disk(sx)" pos="171.562 498.713" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 9.90587" name="mark/disk(sx)" pos="171.562 513.954" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 9.90587" name="mark/disk(sx)" pos="171.562 553.944" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 -1.29403" name="mark/disk(sx)" pos="193.962 534.477" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 -1.29403" name="mark/disk(sx)" pos="193.962 522.103" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 -1.29403" name="mark/disk(sx)" pos="193.962 543.532" size="small" stroke="black"/>
+<use matrix="1 0 0 1 41.3648 -1.29403" name="mark/disk(sx)" pos="193.962 574.316" size="small" stroke="black"/>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+231.062 480.152 m
+253.462 492.107 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 492.107 m
+231.062 497.053 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 492.107 m
+231.062 469.642 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+231.062 497.053 m
+253.462 509.913 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+231.062 497.053 m
+253.462 525.154 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+231.062 497.053 m
+253.462 545.796 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 492.107 m
+275.862 497.434 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 492.107 m
+275.862 522.103 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 522.103 m
+253.462 509.913 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 509.913 m
+275.862 534.477 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+275.862 534.477 m
+253.462 525.154 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 525.154 m
+275.862 543.532 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 525.154 m
+275.862 568.031 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 545.796 m
+231.062 538.25 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+231.062 538.25 m
+253.462 565.144 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 565.144 m
+231.062 550.775 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+231.062 550.775 m
+253.462 581.642 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 553.944 m
+193.962 568.031 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+171.562 553.944 m
+193.962 574.316 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 565.144 m
+275.862 581.642 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 565.144 m
+275.862 574.316 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+253.462 565.144 m
+275.862 568.031 l
+</path>
+<path layer="beta" matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+373.161 480.151 m
+395.561 492.106 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+395.561 492.106 m
+373.161 497.052 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+373.161 497.052 m
+395.561 509.912 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+373.161 497.052 m
+395.561 525.153 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+395.561 492.106 m
+417.961 522.102 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+417.961 522.102 m
+395.561 509.912 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+395.561 509.912 m
+417.961 534.476 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+417.961 534.476 m
+395.561 525.153 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+395.561 525.153 m
+417.961 543.531 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+417.961 543.531 m
+462.761 538.249 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+417.961 543.531 m
+462.761 550.774 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+462.761 550.774 m
+485.161 565.143 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+485.161 565.143 m
+462.761 538.249 l
+</path>
+<path matrix="1 0 0 1 -40.5349 -1.29367" stroke="black" cap="1" join="1">
+485.161 565.143 m
+507.561 574.315 l
+</path>
+<path layer="gamma" matrix="1 0 0 1 -40.5349 -1.29367" stroke="brew1" cap="1" join="1">
+328.362 469.642 m
+373.162 497.052 l
+</path>
+<text matrix="0.7 0 0 0.7 187.027 159.426" transformations="translations" pos="496 608" stroke="black" type="label" width="13.944" height="4.29" depth="2.49" halign="center" valign="baseline" style="math">z_{n_3}</text>
+<use matrix="0.7 0 0 0.7 153.427 154.748" name="mark/disk(sx)" pos="544 608" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 153.427 154.748" name="mark/disk(sx)" pos="576 608" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 209.427 159.426" transformations="translations" pos="496 608" stroke="black" type="label" width="15.005" height="4.29" depth="2.49" halign="center" valign="baseline" style="math">x_{n_1}</text>
+<path stroke="brew1" cap="1" join="1">
+332.627 468.348 m
+355.027 490.812 l
+</path>
+<path stroke="brew1" cap="1" join="1">
+355.027 490.812 m
+377.427 496.14 l
+</path>
+<path stroke="brew1" cap="1" join="1">
+377.427 542.238 m
+422.227 516.091 l
+</path>
+<path stroke="brew1" cap="1" join="1">
+377.427 533.183 m
+422.227 516.091 l
+</path>
+<path stroke="brew1" cap="1" join="1">
+377.427 520.809 m
+422.227 516.091 l
+</path>
+<path stroke="brew1" cap="1" join="1">
+444.627 544.502 m
+422.227 536.956 l
+</path>
+<path stroke="brew1" cap="1" join="1">
+444.627 563.849 m
+467.027 566.738 l
+</path>
+<path stroke="brew1" cap="1" join="1">
+467.027 573.022 m
+511.827 580.348 l
+</path>
+<path stroke="brew6" cap="1" join="1">
+287.827 468.348 m
+332.627 516.091 l
+</path>
+<path stroke="brew6" cap="1" join="1">
+332.627 495.758 m
+355.027 544.502 l
+</path>
+<path stroke="brew6" cap="1" join="1">
+355.027 523.859 m
+377.427 566.738 l
+</path>
+<path stroke="brew6" cap="1" join="1">
+377.427 542.238 m
+422.227 580.348 l
+</path>
+<path stroke="brew6" cap="1" join="1" opacity="70%">
+422.227 549.48 m
+444.627 580.348 l
+</path>
+<path stroke="brew6" cap="1" join="1">
+444.627 563.849 m
+467.027 580.348 l
+</path>
+<use layer="alpha" matrix="1 0 0 1 183.465 -1.2946" name="mark/disk(sx)" pos="149.162 480.152" size="small" stroke="black"/>
+<use matrix="1 0 0 1 183.465 -1.2946" name="mark/disk(sx)" pos="149.162 497.053" size="small" stroke="black"/>
+<use matrix="1 0 0 1 183.465 9.90537" name="mark/disk(sx)" pos="171.562 480.907" size="small" stroke="black"/>
+<use matrix="1 0 0 1 183.465 9.90537" name="mark/disk(sx)" pos="171.562 498.713" size="small" stroke="black"/>
+<use matrix="1 0 0 1 183.465 9.90537" name="mark/disk(sx)" pos="171.562 513.954" size="small" stroke="black"/>
+<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="448 487.703" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 183.465 -1.2945" name="mark/disk(sx)" pos="193.962 534.477" size="small" stroke="black"/>
+<use matrix="1 0 0 1 183.465 -1.2945" name="mark/disk(sx)" pos="193.962 522.103" size="small" stroke="black"/>
+<use matrix="1 0 0 1 183.465 -1.2945" name="mark/disk(sx)" pos="193.962 543.532" size="small" stroke="black"/>
+<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="512 516.205" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 273.065 -1.2946" name="mark/disk(sx)" pos="149.162 550.775" size="small" stroke="black"/>
+<use matrix="1 0 0 1 273.065 -1.2946" name="mark/disk(sx)" pos="149.162 538.25" size="small" stroke="black"/>
+<use matrix="1 0 0 1 273.065 9.90537" name="mark/disk(sx)" pos="171.562 553.944" size="small" stroke="black"/>
+<use name="mark/disk(sx)" pos="444.627 544.502" size="normal" stroke="black"/>
+<use matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="576 588.557" size="normal" stroke="black"/>
+<use layer="beta" matrix="1 0 0 1 273.065 -1.2945" name="mark/disk(sx)" pos="193.962 574.316" size="small" stroke="black"/>
+<use layer="alpha" matrix="0.7 0 0 0.7 63.8268 154.748" name="mark/disk(sx)" pos="640 608" size="normal" stroke="black"/>
+<text matrix="0.7 0 0 0.7 164.627 159.427" transformations="translations" pos="496 608" stroke="black" type="label" width="14.196" height="4.29" depth="2.49" halign="center" valign="baseline" style="math">y_{n_2}</text>
+<use layer="gamma" matrix="0.7 0 0 0.7 153.427 154.748" name="mark/disk(sx)" pos="512 608" size="normal" stroke="black"/>
+<text matrix="1 0 0 1 -10 -2" transformations="translations" pos="434.831 515.515" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" valign="top" style="math">y_4</text>
+<text matrix="1 0 0 1 -3 8" transformations="translations" pos="451.184 534.304" stroke="black" type="label" width="9.102" height="4.294" depth="1.49" valign="top" style="math">z_5</text>
+<text matrix="1 0 0 1 18.572 27.8323" transformations="translations" pos="451.184 534.304" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" valign="top" style="math">x_6</text>
 </page>
 </ipe>

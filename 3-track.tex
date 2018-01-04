@@ -13,7 +13,7 @@ urlcolor=linkblue}
 \setlength{\parskip}{1ex}
 \usepackage{wasysym}
 
-\title{\MakeUppercase{Track Number 3 Implies Layered Tree Width 8}}
+\title{\MakeUppercase{Track Number 3 Implies Layered Pathwidth 8}}
 
 \author{The Layered $\star$-width Gang}%
 
@@ -66,7 +66,7 @@ urlcolor=linkblue}
 \maketitle
 %
 \begin{abstract}
-  We answer a question of Dujmovi\'c \etal by showing that graphs with
+  We answer a question of Bannister \etal\ (2015) by showing that graphs with
   track number 3 have layered pathwidth at most 8.
 \end{abstract}
 %\end{titlepage}
@@ -81,7 +81,7 @@ urlcolor=linkblue}
 
 A \emph{$t$-track assignment} of a graph $G$ is a partition of $V(G)$
 into $t$ independent sets $T_1,\ldots,T_t$ along with $t$ relations
-$\prec_1,\ldots,\prec_t$, where $\prec_i$ defines a total order on $V_i$
+$\prec_1,\ldots,\prec_t$, where $\prec_i$ defines a total order on $T_i$
 for each $i\in\{1,\ldots,t\}$. An \emph{X-crossing} in a track layout is a
 pair of edges $vw$ and $xy$ such that, for some $i,j\in\{1,\ldots,t\}$,
 $v,x\in T_i$ with $v\prec_i x$ and $w,y\in T_j$ with $y\prec_j w$.
@@ -97,21 +97,20 @@ $B_1,\ldots,B_p\subseteq V(G)$ called \emph{bags} such that
 \end{enumerate}
 The \emph{width} of a path decomposition is the size of its largest bag.  The \emph{pathwidth} of $G$, denoted $\pw(G)$, is the minimum width of any path decomposition of $G$.
 
-A \emph{layering} of $G$ is a mapping $\ell:V(G)\to\Z$ with the property
-that $vw\in E(G)$ implies $|\ell(u)-\ell(w)|\le 1$. One can also think of
-a layering as a partition of $G$'s vertices into sets indexed by integers,
-where the \emph{layer} $L_i=\{v\in V(G) : \ell(v)=i\}$.
-
-A \emph{layered path decomposition} of $G$ consists of a layering $\ell$
-and a path decomposition $B_1,\ldots,B_p$ of $G$.  The \emph{(layered)
-width} of a layered path decomposition is the maximum size of the
-intersection of a bag and a layer, i.e., $\max\{|L_i\cap B_j|:i\in\Z,\,
-j\in\{1,\ldots,p\}\}$.  The \emph{layered pathwidth} of $G$, denoted
-$\lpw(G)$ is the smallest (layered) width of any layered path
-decomposition of $G$.
+A \emph{layering} of $G$ is a mapping $\ell:V(G)\to\Z$ with the
+property that $vw\in E(G)$ implies $|\ell(u)-\ell(w)|\le 1$. One
+can also think of a layering as a partition of $G$'s vertices into
+sets indexed by integers, where the \emph{layer} $L_i=\{v\in V(G)
+: \ell(v)=i\}$.  A \emph{layered path decomposition} of $G$ consists
+of a layering $\ell$ and a path decomposition $B_1,\ldots,B_p$ of $G$.
+The \emph{(layered) width} of a layered path decomposition is the maximum
+size of the intersection of a bag and a layer, i.e., $\max\{|L_i\cap
+B_j|:i\in\Z,\, j\in\{1,\ldots,p\}\}$.  The \emph{layered pathwidth} of
+$G$, denoted $\lpw(G)$ is the smallest (layered) width of any layered
+path decomposition of $G$.
 
 In this paper, we prove the following result, resolving an open question
-posed by Dujmovi\'c \etal\ \cite{djsksk}:
+posed by Bannister \etal\ \cite{bannister.devanny.ea:track}:
 
 \begin{thm}\thmlabel{main}
   If $\tr(G)\le 3$, then $\lpw(G)\le 8$.
@@ -133,20 +132,20 @@ and layered pathwidth, but with respect to $s$-weak layerings of $G$.
 \end{lem}
 
 \begin{proof}
-  Given an $s$-weak layered decomposition of $G$ we we define
-  $\ell'(v)=\lfloor\ell(v)/s\rfloor$. Now $\ell'$ is clearly a layering of $G$ and, by definition, for any bag $B_j$ and any weak layer $L_i=\{v\in V(G):\ell(v)=i\}$, $|L_i\cap B_j|\le \lpw_s(G)$.  Therefore, since
+  Given an $s$-weak layered decomposition of $G$ with $s$-weak layering $\ell$, we define
+  $\ell'(v)=\lfloor\ell(v)/s\rfloor$. Now $\ell'$ is clearly a layering of $G$ and, by definition, for any bag $B_j$ and any $s$-weak layer $L_i=\{v\in V(G):\ell(v)=i\}$, $|L_i\cap B_j|\le \lpw_s(G)$.  Therefore, since
   any layer $L_i'=\{v\in V(G):\ell'(v)=i\}$ is the union of $s$ weak layers,
-  $|L_i'\cap B_j|\le s\cdot\lpw_s(G)$.
+  $|L_i'\cap B_j|\le s\cdot\lpw_s(G)$ for all $i\in Z$.
 \end{proof}
 
 Let $G$ be an edge maximal $n$-vertex graph with $\tr(G)=3$.  It is
 helpful to recall that $G$ is a planar graph that has a straight-line
-plane drawing with its vertices of $T_1$ placed on the positive x-axis,
+plane drawing with the vertices of $T_1$ placed on the positive x-axis,
 the vertices of $T_2$ placed on the positive y-axis and the vertices of
 $T_3$ placed on the ray $\{(a,a):a<0\}$. See \figref{planar-view}. (The
-edges in \figref{planar-view} are drawn as curves only to help readability,
-. The drawing would be non-crossing even if all edges were drawn as
-straight lines.)
+edges in \figref{planar-view} are drawn as curves only to help
+readability, . The drawing would be non-crossing even if all edges were
+drawn as straight lines.)
 
 \begin{figure}
   \begin{center}
@@ -156,15 +155,14 @@ straight lines.)
   \figlabel{planar-view}
 \end{figure}
 
-Let $V_1,\ldots,V_3$ be a 3-track layout of $G$ with
-$V_1=\{x_1,\ldots,x_{n_1}\}$, $V_2=\{y_1,\ldots,y_{n_2}\}$, and
-$V_3=\{z_1,\ldots,z_{n_3}\}$ and the total orders $\prec_1,\ldots,\prec_3$
+Let $T_1,\ldots,T_3$ be a 3-track layout of $G$ with
+$T_1=\{x_1,\ldots,x_{n_1}\}$, $T_2=\{y_1,\ldots,y_{n_2}\}$, and
+$T_3=\{z_1,\ldots,z_{n_3}\}$ and the total orders $\prec_1,\ldots,\prec_3$
 are implicit so that, for example $z_i\prec_3 z_j$ if and only if $i<j$.
 In terms of \figref{planar-view}, this means that $x_1,y_1,z_1$ form
 the triangular face containing the origin and $x_{n_1},y_{n_2},z_{n_3}$
 form the cycle on the boundary of the outer face.
-
-From this point on, all track indices are implicitly taken ``modulo 3''
+From this point onward, all track indices are implicitly taken ``modulo 3''
 so that for any integer $i$, $T_i$ refers to the track $T_{i'}$ with
 index $i'=((i-1)\bmod 3)+1$.  \thmref{main} is a consequence of the
 following lemma.
@@ -183,12 +181,12 @@ following lemma.
 \end{lem}
 
 Before proving \lemref{main}, we show how it implies \thmref{main}.
-Since layered pathwidth is monotone with respect to the addition
-of edges, it is safe to assume (as \lemref{main} does) that $G$ is an
-edge maximal graph with $\tr(G)=3$.  By \lemref{main}, therefore $G$
-has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
+Since layered pathwidth is monotone with respect to the addition of edges,
+it is safe to assume (as \lemref{main} does) that $G$ is edge maximal.
+By \lemref{main}, therefore $G$ has $\lpw_4(G)=2$ and therefore, by
+\lemref{weak}, $\lpw(G)\le 8$.
 
-\begin{proof}
+\begin{proof}[Proof of \lemref{main}]
   Our proof is by induction on the number of vertices of $G$.  If
   $|V(G)|\le 4$, then the result is trivial.  Next, Suppose that $G$ has
   a cut set $C=\{x_i,y_j,z_k\}$ having exactly one vertex in each track.
@@ -215,11 +213,15 @@ has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
   gives a 4-weak layering of $G$.
 
   Thus, all that remains is to study the case where $G$ contains no cut
-  set consisting of one vertex on each track.  In this case, a short
-  case analysis that using the facts that $G$ is edge maximal and has at
-  least 5 vertice establishes that $G$ contains the edge $z_1x_2$ or it
-  contains the edge $x_1z_2$.  We will assume, without loss of generality,
-  that $G$ contains the edge $z_1x_2$.  We will construct a path $P$
+  set having exactly one vertex on each track.  We claim that, in this
+  case, $G$ contains the edge $x_1z_2$ or it contains the edge $z_1x_2$.
+  Since $G$ is edge-maximal, this is obvious unless $n_1=n_3=1$ so
+  that neither $z_2$ nor $x_2$ exist.  However, since $|V(G)|\ge 5$,
+  this would imply that $x_1,z_1,y_2$ is a cut set with one vertex on
+  each track, since its removal separates $y_1$ from $y_3$.
+
+  Assume, without loss of generality, that $G$ contains the edge $z_1x_2$.
+  We will construct a path $P$
   starting with the the subpath $x_1,y_1,z_1,x_2$ as follows: When $P$
   has reached a vertex $v\in T_i$, it continues to the lowest indexed
   vertex in $T_{i+1}$ that is adjacent to $v$ but not already in $P$. This
@@ -230,7 +232,7 @@ has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
      \begin{center}
         \includegraphics{figs/path-2}
      \end{center}
-     \caption{The path $P$.}
+     \caption{The path $P$ used in the proof of \lemref{main}.}
      \figlabel{path}
   \end{figure}
 
@@ -287,21 +289,20 @@ has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
   vertices not in $P$.  Finally, observe that this gives a 4-weak layering
   of $G$ (in the worst case, a vertex $v_i$ is adjacent to $v_{i+4}$).
 
-  Now, consider the graph $G-P$ obtained by removing the vertices of
-  $P$ from $G$ (see \figref{g-p}).  We claim that this graph is a 
-  levelled planar
-  graph \cite{jxx} in which the levels of the vertices are given by the
-  layering $L_1,\ldots,L_\ell$.  Refer to \figref{prism}.  
-  One way to see this is to imagine $G$
-  as being drawn with its vertices on the three vertical edges of a
-  hollow triangular prism so that $x_1,y_1,z_1$ are the vertices of
-  one triangular face and $x_{n_1},y_{n_2},z_{n_3}$ are the vertices
-  of the other triangular face.  Now, if we remove the top and bottom
-  faces of this prism, cut it along the embedding of $P$, and unfold
-  the resulting surface so that it lies in the plane, then we obtain a
-  drawing of $G-P$ in which the vertices lie on a set of parallel lines
-  and in which the edges only join vertices on two consecutive lines.
-  This gives the desired levelled planar drawing of $G-P$.
+  Now, consider the graph $G-P$ obtained by removing the vertices of $P$
+  from $G$ (see \figref{g-p}).  We claim that this graph is a levelled
+  planar graph \cite{bannister.devanny.ea:track} in which the levels of
+  the vertices are given by the layering $L_1,\ldots,L_\ell$.  Refer to
+  \figref{prism}.  One way to see this is to imagine $G$ as being drawn
+  with its vertices on the three vertical edges of a triangular prism
+  so that $x_1,y_1,z_1$ are the vertices of one triangular face and
+  $x_{n_1},y_{n_2},z_{n_3}$ are the vertices of the other triangular
+  face.  Now, if we remove the top and bottom faces of this prism,
+  cut it along the embedding of $P$, and unfold the resulting surface
+  so that it lies in the plane, then we obtain a drawing of $G-P$ in
+  which the vertices lie on a set of parallel lines and in which the
+  edges only join vertices on two consecutive lines.  This gives the
+  desired levelled planar drawing of $G-P$.
 
   \begin{figure}
   \begin{center}
@@ -319,26 +320,28 @@ has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
      \begin{center}
         \includegraphics{figs/prism}
      \end{center}
-     \caption{Cutting a prism to obtain a levelled planar drawing of $G-P$.}
+     \caption{Cutting a prism along $P$ to obtain a levelled planar
+      drawing of $G-P$.
+      In the unfolding, edges of $G-P$ are drawn in black. Edges that
+      span 4 layers are drawn in orange.}
      \figlabel{prism}
   \end{figure}
 
-
-
-  By the result of Dujmovi\'c etal\ \cite[Proof of Theorem~5]{jxx},
-  this graph has a layered path decomposition $B_1,\ldots,B_p$ of
-  width 1 using layers $L_1,\ldots,L_\ell$.  If we add the vertices
-  of $P$ to every bag of this decomposition we obtain a 4-weak layered
-  decomposition of $G$ with width 2.  Finally, to satisfy Conditions
-  2 and 4 of the lemma, we prepend a bag $B_0=\{x_1,y_1,z_1\}$ and append a bag
-  $B_{r+1}=\{x_{n_1},y_{n_2},z_{n_3}\}$.
+  By a result of Bannister \etal\ \cite[Proof of
+  Theorem~5]{bannister.devanny.ea:track}, this graph has a
+  layered path decomposition $B_1,\ldots,B_p$ of width 1 using layers
+  $L_1,\ldots,L_\ell$.  If we add the vertices of $P$ to every bag
+  of this decomposition we obtain a 4-weak layered decomposition of
+  $G$ with width 2.  Finally, to satisfy Conditions 2 and 4 of the
+  lemma, we prepend a bag $B_0=\{x_1,y_1,z_1\}$ and append a bag
+  $B_{p+1}=\{x_{n_1},y_{n_2},z_{n_3}\}$.
 \end{proof}
 
 \section{Remarks}
 
 An obvious question is how far \thmref{main} can be generalized. As
-Dujmovi\'c \etal\ point out, it can not be generalized to graphs with
-track number 4; there exists graphs with track number 4 that have no
+Bannister \etal\ \cite{bannister.devanny.ea:track} point out, it can not be generalized to graphs with
+track number 4; there exists graphs with track number 4 that have 
 unbounded layered pathwidth.
 
 Another generalization, that arises naturally from the standard planar
@@ -351,6 +354,23 @@ with track-number at most 3.  Our proof of \lemref{main} generalizes in a straig
 \begin{thm}
    Every $k$-web $G$ has layered pathwidth at most $2(k+1)$.
 \end{thm}
+
+In our proof of \lemref{main} we use the trick of cutting a prism
+along a path $P$ in order to obtain a levelled planar drawing of $G-P$.
+Bannister \etal\ \cite{bannister.devanny.ea:track} use what, on the surface
+appearss to be a somewhat different method to obtain a levelled planar
+drawing of a bipartite 3-track graph.  In particular, they use an argument
+based on winding numbers.  These two techniques, however are not so
+different. Their winding-number argument shows (though not explicitly)
+that the standard drawing of a  bipartite 3-track graph does not contain
+any cycle that contains the origin.  This means that if we draw this graph
+on triangular prism, then there is a path that from triangular face of
+the prism to the other that avoids all edges and vertices of the graph.
+Cutting along this path and unfolding gives a levelled planar drawing.
+
+
+\bibliographystyle{plain}
+\bibliography{3-track}
 
 \end{document}
 

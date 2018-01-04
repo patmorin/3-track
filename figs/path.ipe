@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180103144121" modified="D:20180104095630"/>
+<info created="D:20180103144121" modified="D:20180104114144"/>
 <ipestyle name="brew">
 <color name="aliceblue" value="0.941 0.973 1"/>
 <color name="brew1" value="0.552 0.827 0.78"/>
@@ -269,10 +269,50 @@ h
 <layer name="path"/>
 <layer name="path-highlited"/>
 <layer name="labels"/>
-<view layers="g-p path-vertices path-adjacent path path-highlited labels" active="labels"/>
-<view layers="g-p path-vertices path-adjacent path-highlited" active="path"/>
+<view layers="g-p path-vertices path-adjacent path labels" active="labels"/>
+<view layers="g-p path-vertices path-adjacent path-highlited" active="path-adjacent"/>
 <view layers="g-p" active="path-adjacent"/>
 <view layers="" active="g-p"/>
+<path layer="path-adjacent" stroke="black">
+240.891 674.523 m
+278.024 644.873
+266.491 610.523 c
+</path>
+<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
+256 832 m
+113.179 733.176
+176.804 624.8 c
+</path>
+<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
+165.491 613.486 m
+332.932 616.511
+368 704 c
+</path>
+<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
+256 832 m
+378.692 825.955
+384 704 c
+</path>
+<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
+256 816 m
+376.43 808.857
+384 704 c
+</path>
+<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
+384 704 m
+329.914 789.246
+256 784 c
+</path>
+<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
+320 704 m
+294.714 736.696
+256 720 c
+</path>
+<path stroke="black">
+231.837 601.472 m
+248.892 577.362
+279.291 610.523 c
+</path>
 <group layer="path-highlited" matrix="0 0.8 0.8 0 -322.309 405.723">
 <path stroke="brew4" pen="ultrafat">
 256 720 m
@@ -390,21 +430,6 @@ h
 <use matrix="0.565686 -0.565686 -0.565686 -0.565686 494.314 1153.58" name="mark/disk(sx)" pos="256 800" size="normal" stroke="black"/>
 <use matrix="0.565686 -0.565686 -0.565686 -0.565686 494.314 1153.58" name="mark/disk(sx)" pos="256 752" size="normal" stroke="black"/>
 <path layer="path-adjacent" matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
-256 832 m
-113.179 733.176
-176.804 624.8 c
-</path>
-<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
-165.491 613.486 m
-332.932 616.511
-368 704 c
-</path>
-<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
-384 704 m
-329.914 789.246
-256 784 c
-</path>
-<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
 256 800 m
 167.237 730.41
 210.745 658.741 c
@@ -413,11 +438,6 @@ h
 199.432 647.428 m
 280.885 650.957
 304 704 c
-</path>
-<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
-320 704 m
-294.714 736.696
-256 720 c
 </path>
 <path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
 272 704 m
@@ -538,16 +558,6 @@ h
 </group>
 </group>
 <path layer="path-adjacent" matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
-256 816 m
-376.43 808.857
-384 704 c
-</path>
-<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
-256 832 m
-378.692 825.955
-384 704 c
-</path>
-<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
 256 800 m
 157.431 754.799
 188.118 636.114 c
@@ -566,11 +576,6 @@ h
 256 720 m
 298.485 717.336
 304 704 c
-</path>
-<path matrix="0 0.8 0.8 0 -322.309 405.723" stroke="black">
-256 752 m
-316.085 736.445
-320 704 c
 </path>
 <text layer="labels" matrix="0.8 0 0 0.8 50.5842 125.631" transformations="translations" pos="254.239 602.873" stroke="black" type="label" width="10.163" height="4.294" depth="1.49" halign="center" valign="top" style="math">x_1</text>
 <text matrix="0.8 0 0 0.8 130.584 90.4306" transformations="translations" pos="139.38 668.507" stroke="black" type="label" width="9.354" height="4.297" depth="1.93" valign="baseline" style="math">y_1</text>
