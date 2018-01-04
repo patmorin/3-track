@@ -164,16 +164,17 @@ In terms of \figref{planar-view}, this means that $x_1,y_1,z_1$ form
 the triangular face containing the origin and $x_{n_1},y_{n_2},z_{n_3}$
 form the cycle on the boundary of the outer face.
 
-From this point on, all track indices are implicitly taken ``modulo
-3.'' in particular, $T_i$ refers to the track $T_{i'}$ with index
-$i'=((i-1)\bmod 3)+1$.  \thmref{main} is a consequence of the following 
-lemma.
+From this point on, all track indices are implicitly taken ``modulo 3''
+so that for any integer $i$, $T_i$ refers to the track $T_{i'}$ with
+index $i'=((i-1)\bmod 3)+1$.  \thmref{main} is a consequence of the
+following lemma.
 
 \begin{lem}\lemlabel{main}
   The graph $G$ described above has a 4-weak layered path decomposition
   $\ell$, $B_1,\ldots,B_p$ of (layered) width $2$ in which 
   \begin{enumerate}
-    \item for each $i\in\{1,\ldots,3\}$, each vertex in $T_i$ is assign to a layer $L_j$ with $j\equiv i\pmod 3$;
+    \item for each $i\in\{1,\ldots,3\}$ and each $v\in T_i$,
+      $\ell(v)\equiv i\pmod 3$;
     \item $B_1=\{x_1,y_1,z_1\}$;
     \item $\ell(x_1)=1$, $\ell(y_1)=2$, and $\ell(z_1)=3$;
     \item $B_p=\{x_{n_1},y_{n_2},z_{n_3}\}$; and
@@ -188,41 +189,42 @@ edge maximal graph with $\tr(G)=3$.  By \lemref{main}, therefore $G$
 has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
 
 \begin{proof}
-  Our proof is by induction on the number of vertices of $G$.
-  If $|V(G)|\le 4$, then the result is trivial.
-  Next, Suppose
-  that $G$ has a cut set $x_i,y_j,z_k$ with at least one of $i,j,k\neq 1$.
-  Since $G$ is edge maximal, $x_i,y_j,z_k$ form a cycle in $G$.  Now, the
-  subgraph $G_1$ of $G$ induced by $\{x_1,\ldots,x_i, y_1,\ldots,y_j,
-  z_1,\ldots,z_k\}$ is an edge maximal graph with $\tr(G_1)=3$ and
-  we can inductively apply \lemref{main} to find an 4-weak layered
-  path decomposition of $G_1$ in which $x_i,y_j,z_k$ are in the last
-  bag and are on three consecutive layers $L_{r+1},L_{r+2},L_{r+3}$.
+  Our proof is by induction on the number of vertices of $G$.  If
+  $|V(G)|\le 4$, then the result is trivial.  Next, Suppose that $G$ has
+  a cut set $C=\{x_i,y_j,z_k\}$ having exactly one vertex in each track.
+  Since $G$ is edge maximal, $x_i,y_j,z_k$ form a cycle in $G$.  Now,
+  the subgraph $G_1$ of $G$ induced by $\{x_1,\ldots,x_i, y_1,\ldots,y_j,
+  z_1,\ldots,z_k\}$ is an edge maximal graph with $\tr(G_1)=3$ and we
+  can inductively apply \lemref{main} to find a width-2 4-weak layered
+  path decomposition of $G_1$ in which $x_i,y_j,z_k$ are in the last bag
+  and are assigned to three consecutive layers $r+1$, $r+2$, and $r+3$.
   Note that there are three possible assignments of $x_i,y_j,z_k$ to
-  $L_{r+1},L_{r+2},L_{r+3}$ depending on the value of $r\bmod 3$.  Suppose, without loss of generality, that $y_j\in L_{r+1}$ (so $z_k\in L_{r+2}$ and $x_i\in L_{r+3}$).
+  these three layers depending on the value of $r\bmod 3$.  Suppose,
+  without loss of generality, that $\ell(y_j)=r+1$ (so $\ell(z_k)=r+2$
+  and $\ell(x_i)=r+3$.)
 
   Next, consider the graph $G_2$ induced by
   $\{x_i,\ldots,x_{n_1},y_j,\ldots,y_{n_2},z_k,\ldots,z_{n_3}\}$.
-  We apply \lemref{main} inductively on $G_2$ relabelling tracks
-  to ensure that in the
-  resulting layered decomposition $y_j\in L_1$, $z_k\in L_2$ and $x_i\in
-  L_3$.   We can now obtain a width-1 4-weak layered path decomposition of
-  $G$ by joining the two decompositions.  In particular,  concatenating
-  the sequence of bags for $G_1$ with the sequence of bags for $G_2$
-  gives a path decomposition of $G$ and addding $r$ to the indices of
-  all layers in the layering of $G_2$ gives a 4-weak layering of $G$.
+  We apply \lemref{main} inductively on $G_2$ relabelling tracks to
+  ensure that in the resulting layered decomposition $\ell(y_j)=1$,
+  $\ell(z_k)=2$ and $\ell(x_i)=3$.   We can now obtain a width-2 4-weak
+  layered path decomposition of $G$ by joining the two decompositions.
+  In particular,  concatenating the sequence of bags for $G_1$ with
+  the sequence of bags for $G_2$ gives a path decomposition of $G$
+  and addding $r$ to the indices of all layers in the layering of $G_2$
+  gives a 4-weak layering of $G$.
 
-  Thus, all that remains is to study the case where $G$ contains no
-  cut set consisting of one vertex on each track.  Since $|V(G)|\ge
-  5$ and $G$ is edge-maximal, a short case-analysis establishes that
-  $G$ contains the edge $z_1x_2$ or it contains the edge $x_1z_2$.
-  We will assume, without loss of generality, that $G$ contains the
-  edge $z_1x_2$.  We will construct a path $P$ starting with the the
-  subpath $x_1,y_1,z_1,x_2$ as follows: When $P$ has reached a vertex
-  $v\in T_i$, it continues to the lowest indexed vertex in $T_{i+1}$ that
-  is adjacent to $v$ but not already in $P$. This process terminates when
-  $v$ has no neighbour in $T_{i+1}$ that is not already a part of $P$.
-  An example is illustrated in \figref{path}.
+  Thus, all that remains is to study the case where $G$ contains no cut
+  set consisting of one vertex on each track.  In this case, a short
+  case analysis that using the facts that $G$ is edge maximal and has at
+  least 5 vertice establishes that $G$ contains the edge $z_1x_2$ or it
+  contains the edge $x_1z_2$.  We will assume, without loss of generality,
+  that $G$ contains the edge $z_1x_2$.  We will construct a path $P$
+  starting with the the subpath $x_1,y_1,z_1,x_2$ as follows: When $P$
+  has reached a vertex $v\in T_i$, it continues to the lowest indexed
+  vertex in $T_{i+1}$ that is adjacent to $v$ but not already in $P$. This
+  process terminates when $v$ has no neighbour in $T_{i+1}$ that is not
+  already a part of $P$.  An example is illustrated in \figref{path}.
 
   \begin{figure}
      \begin{center}
@@ -289,7 +291,8 @@ has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
   $P$ from $G$ (see \figref{g-p}).  We claim that this graph is a 
   levelled planar
   graph \cite{jxx} in which the levels of the vertices are given by the
-  layering $L_1,\ldots,L_\ell$.  One way to see this is to imagine $G$
+  layering $L_1,\ldots,L_\ell$.  Refer to \figref{prism}.  
+  One way to see this is to imagine $G$
   as being drawn with its vertices on the three vertical edges of a
   hollow triangular prism so that $x_1,y_1,z_1$ are the vertices of
   one triangular face and $x_{n_1},y_{n_2},z_{n_3}$ are the vertices
@@ -312,6 +315,16 @@ has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
   \end{figure}
 
 
+  \begin{figure}
+     \begin{center}
+        \includegraphics{figs/prism}
+     \end{center}
+     \caption{Cutting a prism to obtain a levelled planar drawing of $G-P$.}
+     \figlabel{prism}
+  \end{figure}
+
+
+
   By the result of Dujmovi\'c etal\ \cite[Proof of Theorem~5]{jxx},
   this graph has a layered path decomposition $B_1,\ldots,B_p$ of
   width 1 using layers $L_1,\ldots,L_\ell$.  If we add the vertices
@@ -320,6 +333,24 @@ has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
   2 and 4 of the lemma, we prepend a bag $B_0=\{x_1,y_1,z_1\}$ and append a bag
   $B_{r+1}=\{x_{n_1},y_{n_2},z_{n_3}\}$.
 \end{proof}
+
+\section{Remarks}
+
+An obvious question is how far \thmref{main} can be generalized. As
+Dujmovi\'c \etal\ point out, it can not be generalized to graphs with
+track number 4; there exists graphs with track number 4 that have no
+unbounded layered pathwidth.
+
+Another generalization, that arises naturally from the standard planar
+drawing of 3-track graphs is the following. We say that a graph $G$
+is a $k$-web if it has a straight line drawing with its vertices placed
+on $k$ concentric rays and such that every edge joins a pair of vertices
+on two consecutive rays.  The set of 3-webs is exactly the set of graphs
+with track-number at most 3.  Our proof of \lemref{main} generalizes in a straightforward manner to the following result:
+
+\begin{thm}
+   Every $k$-web $G$ has layered pathwidth at most $2(k+1)$.
+\end{thm}
 
 \end{document}
 
