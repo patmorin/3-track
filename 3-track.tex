@@ -280,30 +280,30 @@ By \lemref{main}, therefore $G$ has $\lpw_4(G)=2$ and therefore, by
 
   Thus we have constructed a path $P=v_1,\ldots,v_r$ whose first three
   vertices are $x_1,y_1,z_1$ and whose last three vertices are $x_{n_1}$,
-  $y_{n_2}$ and $z_{n_3}$ (not necessarily in order).
-  We assign layers to the vertices of $P$ as follows: For each
-  vertex $v_i$ on $P$, we set $\ell(v_i)=i$.  Note that this satisfies
-  Conditions~3 and 5 of the lemma and also satisfies Condition~1 for the
-  vertices of $P$.  For each $t\in\{1,\ldots,3\}$, any vertex $v\in T_t$
-  that is not in $P$ is assigned to the same layer as $v$'s immediate
-  precessor in $P\cap T_t$.  This assignment satisifies Condition~1 for
-  vertices not in $P$.  Finally, observe that this gives a 4-weak layering
-  of $G$ (in the worst case, a vertex $v_i$ is adjacent to $v_{i+4}$).
+  $y_{n_2}$ and $z_{n_3}$ (not necessarily in order).  We assign layers
+  to the vertices of $P$ as follows: For each vertex $v_i$ on $P$,
+  we set $\ell(v_i)=i$.  Note that this satisfies Conditions~3 and 5
+  of the lemma and also satisfies Condition~1 for the vertices of $P$.
+  For each $t\in\{1,\ldots,3\}$, any vertex $v\in T_t$ that is not in
+  $P$ is assigned to the same layer as $v$'s immediate predecessor in
+  $P\cap T_t$.  This assignment satisifies Condition~1 for vertices not
+  in $P$.  Finally, observe that this gives a 4-weak layering of $G$ (in
+  the worst case, a vertex $v$ with $\ell(v)=i$ is adjacent to $v_{i+4}$).
 
   Now, consider the graph $G-P$ obtained by removing the vertices of $P$
   from $G$ (see \figref{g-p}).  We claim that this graph is a levelled
-  planar graph \cite{bannister.devanny.ea:track} in which the levels of
-  the vertices are given by the layering $L_1,\ldots,L_\ell$.  Refer to
-  \figref{prism}.  One way to see this is to imagine $G$ as being drawn
-  with its vertices on the three vertical edges of a triangular prism
-  so that $x_1,y_1,z_1$ are the vertices of one triangular face and
-  $x_{n_1},y_{n_2},z_{n_3}$ are the vertices of the other triangular
-  face.  Now, if we remove the top and bottom faces of this prism,
-  cut it along the embedding of $P$, and unfold the resulting surface
-  so that it lies in the plane, then we obtain a drawing of $G-P$ in
-  which the vertices lie on a set of parallel lines and in which the
-  edges only join vertices on two consecutive lines.  This gives the
-  desired levelled planar drawing of $G-P$.
+  planar graph \cite{bannister.devanny.ea:track} in which the levels
+  of the vertices are given by the layering $\ell$ defined above.
+  Refer to \figref{prism}.  One way to see this is to imagine $G$
+  as being drawn with its vertices on the three vertical edges of
+  a triangular prism so that $x_1,y_1,z_1$ are the vertices of one
+  triangular face and $x_{n_1},y_{n_2},z_{n_3}$ are the vertices of
+  the other triangular face.  Now, if we remove the top and bottom
+  faces of this prism, cut it along the embedding of $P$, and unfold
+  the resulting surface so that it lies in the plane, then we obtain a
+  drawing of $G-P$ in which the vertices lie on a set of parallel lines
+  and in which the edges only join vertices on two consecutive lines.
+  This gives the desired levelled planar drawing of $G-P$.
 
   \begin{figure}
   \begin{center}
@@ -329,12 +329,12 @@ By \lemref{main}, therefore $G$ has $\lpw_4(G)=2$ and therefore, by
   \end{figure}
 
   By a result of Bannister \etal\ \cite[Proof of
-  Theorem~5]{bannister.devanny.ea:track}, this graph has a
-  layered path decomposition $B_1,\ldots,B_p$ of width 1 using layers
+  Theorem~5]{bannister.devanny.ea:track}, this graph has a layered
+  path decomposition $B_1,\ldots,B_p$ of width 1 using layers
   $L_1,\ldots,L_\ell$.  If we add the vertices of $P$ to every bag
-  of this decomposition we obtain a 4-weak layered decomposition of
-  $G$ with width 2.  Finally, to satisfy Conditions 2 and 4 of the
-  lemma, we prepend a bag $B_0=\{x_1,y_1,z_1\}$ and append a bag
+  of this decomposition we obtain a width-2 4-weak layered path
+  decomposition of $G$.  Finally, to satisfy Conditions 2 and 4 of
+  the lemma, we prepend a bag $B_0=\{x_1,y_1,z_1\}$ and append a bag
   $B_{p+1}=\{x_{n_1},y_{n_2},z_{n_3}\}$.
 \end{proof}
 
@@ -346,11 +346,20 @@ track number 4; there exists graphs with track number 4 that have
 unbounded layered pathwidth.
 
 Another generalization, that arises naturally from the standard planar
-drawing of 3-track graphs is the following. We say that a graph $G$
-is a $k$-web if it has a straight line drawing with its vertices placed
-on $k$ concentric rays and such that every edge joins a pair of vertices
-on two consecutive rays.  The set of 3-webs is exactly the set of graphs
-with track-number at most 3.  Our proof of \lemref{main} generalizes in a straightforward manner to the following result:
+drawing of 3-track graphs is the following. Refer to \figref{web}.  
+A \emph{$k$-web} is a
+graph that has a straight line drawing with its vertices placed on $k$
+concentric rays and such that every edge joins a pair of vertices on
+two consecutive rays.  The set of 3-webs is exactly the set of graphs
+with track-number at most 3.  Our proof of \lemref{main} generalizes in
+a straightforward manner to the following result:
+
+\begin{figure}
+  \begin{center}
+    \includegraphics{figs/web}
+  \end{center}
+  \caption{An edge-maximal 7-web.}
+\end{figure}
 
 \begin{thm}
    Every $k$-web $G$ has layered pathwidth at most $2(k+1)$.
