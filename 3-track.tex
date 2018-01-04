@@ -1,0 +1,318 @@
+\documentclass{patmorin}
+\listfiles
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{amsthm,amsmath,graphicx}
+\usepackage{pat}
+\usepackage[letterpaper]{hyperref}
+\usepackage[table,dvipsnames]{xcolor}
+\definecolor{linkblue}{named}{Blue}
+\hypersetup{colorlinks=true, linkcolor=linkblue,  anchorcolor=linkblue,
+citecolor=linkblue, filecolor=linkblue, menucolor=linkblue,
+urlcolor=linkblue} 
+\setlength{\parskip}{1ex}
+\usepackage{wasysym}
+
+\title{\MakeUppercase{Track Number 3 Implies Layered Tree Width 8}}
+
+\author{The Layered $\star$-width Gang}%
+
+%\usepackage[mathlines]{lineno}
+%\linenumbers
+%\setlength{\linenumbersep}{2.5cm}
+%\rightlinenumbers
+%\linenumbers
+%\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+%  \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+%  \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+%  \renewenvironment{#1}%
+%     {\linenomath\csname old#1\endcsname}%
+%     {\csname oldend#1\endcsname\endlinenomath}}% 
+%\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+%  \patchAmsMathEnvironmentForLineno{#1}%
+%  \patchAmsMathEnvironmentForLineno{#1*}}%
+%\AtBeginDocument{%
+%\patchBothAmsMathEnvironmentsForLineno{equation}%
+%\patchBothAmsMathEnvironmentsForLineno{align}%
+%\patchBothAmsMathEnvironmentsForLineno{flalign}%
+%\patchBothAmsMathEnvironmentsForLineno{alignat}%
+%\patchBothAmsMathEnvironmentsForLineno{gather}%
+%\patchBothAmsMathEnvironmentsForLineno{multline}%
+%}
+
+
+\newcommand{\question}[1]{\textbf{\color{red}Question:}~#1}
+
+\DeclareMathOperator{\ob}{obs}
+\DeclareMathOperator{\planeobs}{plane-obs}
+
+\newcommand{\eps}{\epsilon}
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\pw}{pw}
+\DeclareMathOperator{\lpw}{lpw}
+\DeclareMathOperator{\wlpw}{wlpw}
+
+\DeclareSymbolFont{sfoperators}{OT1}{cmss}{m}{n}
+\DeclareSymbolFontAlphabet{\mathsf}{sfoperators}
+
+\makeatletter
+\def\operator@font{\mathgroup\symsfoperators}
+\makeatother
+
+%\pagenumbering{roman}
+\begin{document}
+%\begin{titlepage}
+\maketitle
+%
+\begin{abstract}
+  We answer a question of Dujmovi\'c \etal by showing that graphs with
+  track number 3 have layered pathwidth at most 8.
+\end{abstract}
+%\end{titlepage}
+%
+%\tableofcontents
+%
+%\newpage
+
+
+\section{Introduction}
+\pagenumbering{arabic}
+
+A \emph{$t$-track assignment} of a graph $G$ is a partition of $V(G)$
+into $t$ independent sets $T_1,\ldots,T_t$ along with $t$ relations
+$\prec_1,\ldots,\prec_t$, where $\prec_i$ defines a total order on $V_i$
+for each $i\in\{1,\ldots,t\}$. An \emph{X-crossing} in a track layout is a
+pair of edges $vw$ and $xy$ such that, for some $i,j\in\{1,\ldots,t\}$,
+$v,x\in T_i$ with $v\prec_i x$ and $w,y\in T_j$ with $y\prec_j w$.
+A $t$-track assignment is called a \emph{$t$-track layout} if it has no
+X-crossing.  The minimum number of tracks in any $t$-track layout of $G$
+is called the track number of $G$ and is denoted as $\tr(G)$.
+
+A \emph{path decomposition} of $G$ is a sequence of sets
+$B_1,\ldots,B_p\subseteq V(G)$ called \emph{bags} such that
+\begin{enumerate}
+   \item For each $v\in V(G)$, the bags that contain $v$ form a contiguous subsequence.
+   \item For each edge $vw\in E(G)$, there is some bag that contains both $v$ and $w$.
+\end{enumerate}
+The \emph{width} of a path decomposition is the size of its largest bag.  The \emph{pathwidth} of $G$, denoted $\pw(G)$, is the minimum width of any path decomposition of $G$.
+
+A \emph{layering} of $G$ is a mapping $\ell:V(G)\to\Z$ with the property
+that $vw\in E(G)$ implies $|\ell(u)-\ell(w)|\le 1$. One can also think of
+a layering as a partition of $G$'s vertices into sets indexed by integers,
+where the \emph{layer} $L_i=\{v\in V(G) : \ell(v)=i\}$.
+
+A \emph{layered path decomposition} of $G$ consists of a layering $\ell$
+and a path decomposition $B_1,\ldots,B_p$ of $G$.  The \emph{(layered)
+width} of a layered path decomposition is the maximum size of the
+intersection of a bag and a layer, i.e., $\max\{|L_i\cap B_j|:i\in\Z,\,
+j\in\{1,\ldots,p\}\}$.  The \emph{layered pathwidth} of $G$, denoted
+$\lpw(G)$ is the smallest (layered) width of any layered path
+decomposition of $G$.
+
+In this paper, we prove the following result, resolving an open question
+posed by Dujmovi\'c \etal\ \cite{djsksk}:
+
+\begin{thm}\thmlabel{main}
+  If $\tr(G)\le 3$, then $\lpw(G)\le 8$.
+\end{thm}
+
+\section{Proof of \thmref{main}}
+
+It will be slightly easier to prove our result for a weaker notion
+of layering.  An \emph{$s$-weak layering} of $G$ is a mapping
+$\ell:V(G)\to\Z$ with the property that, for every $vw\in E(G)$,
+$|\ell(v)-\ell(w)|\le s$.  The sets $L_i=\{v\in V(G): \ell(v)=i\}$
+are called $s$-weak layers.  The terms \emph{$s$-weak layered path
+decomposition} and \emph{$s$-weak layered pathwidth} of $G$, denoted
+$\lpw_s(G)$, are defined the same way as layered path decompositions
+and layered pathwidth, but with respect to $s$-weak layerings of $G$.
+
+\begin{lem}\lemlabel{weak}
+  For any $s\in\N$, $\lpw(G) \le s\cdot\lpw_s(G)$.
+\end{lem}
+
+\begin{proof}
+  Given an $s$-weak layered decomposition of $G$ we we define
+  $\ell'(v)=\lfloor\ell(v)/s\rfloor$. Now $\ell'$ is clearly a layering of $G$ and, by definition, for any bag $B_j$ and any weak layer $L_i=\{v\in V(G):\ell(v)=i\}$, $|L_i\cap B_j|\le \lpw_s(G)$.  Therefore, since
+  any layer $L_i'=\{v\in V(G):\ell'(v)=i\}$ is the union of $s$ weak layers,
+  $|L_i'\cap B_j|\le s\cdot\lpw_s(G)$.
+\end{proof}
+
+Let $G$ be an edge maximal $n$-vertex graph with $\tr(G)=3$.  It is
+helpful to recall that $G$ is a planar graph that has a straight-line
+plane drawing with its vertices of $T_1$ placed on the positive x-axis,
+the vertices of $T_2$ placed on the positive y-axis and the vertices of
+$T_3$ placed on the ray $\{(a,a):a<0\}$. See \figref{planar-view}. (The
+edges in \figref{planar-view} are drawn as curves only to help readability,
+. The drawing would be non-crossing even if all edges were drawn as
+straight lines.)
+
+\begin{figure}
+  \begin{center}
+     \includegraphics{figs/path-1}
+  \end{center}
+  \caption{The standard planar embedding of a 3-track graph.}
+  \figlabel{planar-view}
+\end{figure}
+
+Let $V_1,\ldots,V_3$ be a 3-track layout of $G$ with
+$V_1=\{x_1,\ldots,x_{n_1}\}$, $V_2=\{y_1,\ldots,y_{n_2}\}$, and
+$V_3=\{z_1,\ldots,z_{n_3}\}$ and the total orders $\prec_1,\ldots,\prec_3$
+are implicit so that, for example $z_i\prec_3 z_j$ if and only if $i<j$.
+In terms of \figref{planar-view}, this means that $x_1,y_1,z_1$ form
+the triangular face containing the origin and $x_{n_1},y_{n_2},z_{n_3}$
+form the cycle on the boundary of the outer face.
+
+From this point on, all track indices are implicitly taken ``modulo
+3.'' in particular, $T_i$ refers to the track $T_{i'}$ with index
+$i'=((i-1)\bmod 3)+1$.  \thmref{main} is a consequence of the following 
+lemma.
+
+\begin{lem}\lemlabel{main}
+  The graph $G$ described above has a 4-weak layered path decomposition
+  $\ell$, $B_1,\ldots,B_p$ of (layered) width $2$ in which 
+  \begin{enumerate}
+    \item for each $i\in\{1,\ldots,3\}$, each vertex in $T_i$ is assign to a layer $L_j$ with $j\equiv i\pmod 3$;
+    \item $B_1=\{x_1,y_1,z_1\}$;
+    \item $\ell(x_1)=1$, $\ell(y_1)=2$, and $\ell(z_1)=3$;
+    \item $B_p=\{x_{n_1},y_{n_2},z_{n_3}\}$; and
+    \item $x_{n_1},y_{n_2},z_{n_3}$ appear in 3 consecutive layers.
+  \end{enumerate}
+\end{lem}
+
+Before proving \lemref{main}, we show how it implies \thmref{main}.
+Since layered pathwidth is monotone with respect to the addition
+of edges, it is safe to assume (as \lemref{main} does) that $G$ is an
+edge maximal graph with $\tr(G)=3$.  By \lemref{main}, therefore $G$
+has $\lpw_4(G)=2$ and therefore, by \lemref{weak}, $\lpw(G)\le 8$.
+
+\begin{proof}
+  Our proof is by induction on the number of vertices of $G$.
+  If $|V(G)|\le 3$, then the result is trivial.
+  Next, Suppose
+  that $G$ has a cut set $x_i,y_j,z_k$ with at least one of $i,j,k\neq 1$.
+  Since $G$ is edge maximal, $x_i,y_j,z_k$ form a cycle in $G$.  Now, the
+  subgraph $G_1$ of $G$ induced by $\{x_1,\ldots,x_i, y_1,\ldots,y_j,
+  z_1,\ldots,z_k\}$ is an edge maximal graph with $\tr(G_1)=3$ and
+  we can inductively apply \lemref{main} to find an 4-weak layered
+  path decomposition of $G_1$ in which $x_i,y_j,z_k$ are in the last
+  bag and are on three consecutive layers $L_{r+1},L_{r+2},L_{r+3}$.
+  Note that there are three possible assignments of $x_i,y_j,z_k$ to
+  $L_{r+1},L_{r+2},L_{r+3}$ depending on the value of $r\bmod 3$.  Suppose, without loss of generality, that $y_j\in L_{r+1}$ (so $z_k\in L_{r+2}$ and $x_i\in L_{r+3}$).
+
+  Next, consider the graph $G_2$ induced by
+  $\{x_i,\ldots,x_{n_1},y_j,\ldots,y_{n_2},z_k,\ldots,z_{n_3}\}$.
+  We apply \lemref{main} inductively on $G_2$ relabelling tracks
+  to ensure that in the
+  resulting layered decomposition $y_j\in L_1$, $z_k\in L_2$ and $x_i\in
+  L_3$.   We can now obtain a width-1 4-weak layered path decomposition of
+  $G$ by joining the two decompositions.  In particular,  concatenating
+  the sequence of bags for $G_1$ with the sequence of bags for $G_2$
+  gives a path decomposition of $G$ and addding $r$ to the indices of
+  all layers in the layering of $G_2$ gives a 4-weak layering of $G$.
+
+  Thus, all that remains is to study the case where $G$ contains no
+  cut-set of size 3. Since $|V(G)|\ge 4$ and $G$ is edge-maximal, at least
+  one of $x_1$, $y_1$, or $z_1$ has a neighbour not in $\{x_1,y_1,z_1\}$.
+  We will assume, for now, that $z_1$ has $x_2$ as a neighbour.  Note
+  that this assumption is not yet justfied, and it will be discussed later.
+  We will construct a path $P$ starting with the the subpath
+  $x_1,y_1,z_1,x_2$ as follows:  When $P$ has reached a vertex $v\in T_i$,
+  it continues to the lowest indexed vertex in $T_{i+1}$. This process
+  terminates when $v$ has no neighbour in $V_{i+1}$ that is not already
+  a part of $P$.  An example is illustrated in \figref{path}.
+
+  \begin{figure}
+     \begin{center}
+        \includegraphics{figs/path-2}
+     \end{center}
+     \caption{The path $P$.}
+     \figlabel{path}
+  \end{figure}
+
+  Let $P=v_1,\ldots,v_r$ be the resulting path.  We claim that, for
+  each $t\in \{1,\ldots,3\}$, the subsequence of $P$ induced by $T_t$
+  is increasing. This can be proven by induction the number of vertices
+  added to $P$. Refer to \figref{combo}(a).  If $v_a=x_i$, then $v_{a-3}=x_{i'}$ with (by induction)
+  $i'< i$.  Now, $P$ contains an edge $v_{a-3}v_{a-2}=x_{i'}y_{j'}$ for
+  some $j'$.  The existence of this edge in $G$ ensures that the next
+  vertex $v_{a+1}$ (if any) added to $P$ is $y_j$ for some $j > j'$.
+  (Using a vertex $y_j$ with $j < j'$ would imply that $x_{i'}y_{j'}$
+  and $x_iy_j$ form an X-crossing.)
+
+  \begin{figure}
+    \begin{center}
+       \begin{tabular}{cc}
+         \includegraphics{figs/monotone} & \includegraphics{figs/closed} \\
+         (a) & (b)
+       \end{tabular}
+    \end{center}
+    \caption{Two steps in the proof of \lemref{main}: (a)~the sequence $P\cap T_2$ is monotone and (b)~the $v_{r-2},v_{r-1},v_r$ is a cycle.}
+    \figlabel{combo}
+  \end{figure}
+
+
+  Next, we claim that
+  $\{v_{r-2},v_{r-1},v_{r}\}=\{x_{n_1},y_{n_2},z_{n_2}\}$. To see this,
+  suppose without loss of generality, that $v_r\in T_1$, so $v_r=x_i$
+  for some $i\in\{1,\ldots,n_1\}$. Refer to \figref{combo}(b). The only reason $P$ ends at $x_i$
+  is that $x_i$ has no neighbour in $T_{2}$ that is not already in $P$.
+  Since $G$ is edge maximal, this already implies that $v_{r-2}=y_{n_2}$,
+  otherwise $v_r$ would have a neighbor in $T_2$ that is not already
+  in $P$.  Again, since $G$ is edge maximal, this implies $v_r$ is
+  adjacent to $v_{r-2}$.
+
+
+  Thus far, we have established that $v_{r-2},v_{r-1},v_{r}$ forms a
+  cycle $C$ and, in the planar embedding of $G$, $C$ separates $v_{r-3}$
+  (which is inside of $C$) from any vertices outside of $C$.  If there
+  are any vertices outside of $C$, this would make $C$ a cut set of size
+  3, which we have already ruled out. Therefore, there are no vertices
+  outside of $C$ and therefore $C=x_{n_1},y_{n_2},z_{n_2}$, as claimed.
+
+  Therefore, $P=v_1,\ldots,v_r$ is a path whose first three vertices
+  are $x_1$, $y_1$ and $z_1$ (not necessarily in order) and whose last
+  three vertices are $x_{n_1}$, $y_{n_2}$ and $z_{n_3}$ (not necessarily
+  in order).
+
+  We assign layers to the vertices of $P$ as follows: $x_1\in
+  L_1$, $y_1\in L_2$ and $z_1\in L_3$.  This satisfies Condition~3
+  of the lemma. For $i> 3$, $v_i$ is on $L_{i}$.  This satisfies
+  Condition~5 and satisfies Condition~1 for vertices in $P$.  For each
+  $t\in\{1,\ldots,3\}$, any vertex $v\in T_t$ that is not in $P$ is
+  assigned to the same layer as $v$'s immediate precessor in $P\cap T_t$.
+  This assignment satisifies Condition~1 for vertices not in $P$.
+  Finally, observe that this gives a 4-weak layering of $G$ (in the
+  worst case, a vertex $v_i$ is adjacent to $v_{i+4}$.
+
+  Now, consider the graph $G-P$ obtained by removing the vertices of
+  $P$ from $G$ (see \figref{g-p}).  This graph is a levelled planar graph in which the
+  levels of the vertices are given by the layering $L_1,\ldots,L_\ell$.
+  By the result of Dujmovi\'c etal\ \cite[Proof of Theorem~5]{jxx},
+  this graph has a layered path decomposition $B_1,\ldots,B_p$ of
+  width 1 using layers $L_1,\ldots,L_\ell$.  If we add the vertices
+  of $P$ to every bag of this decomposition we obtain a 4-weak layered
+  decomposition of $G$ with width 2.  Finally, to satisfy Conditions
+  2 and 4 of the lemma, we prepend a bag $B_0=\{x_1,y_1,z_1\}$ and append a bag
+  $B_{r+1}=\{x_{n_1},y_{n_2},z_{n_3}\}$.
+
+  \begin{figure}
+  \begin{center}
+  \begin{tabular}{cc}
+  \includegraphics{figs/path-2}
+  \includegraphics{figs/path-3}
+  \end{tabular}
+  \end{center}
+  \caption{The graph $G-P$ is a levelled planar graph.}
+  \figlabel{g-p}
+  \end{figure}
+
+  All that remains is to justify the assumption made at the beginning
+  of this proof.  In particular, we assumed that $G$ contains the
+  edge $z_1x_2$.  A short case analysis (which I don't have time to finish righ t now) shows that, if $G$ has no cut set of size 3 and more than 4 vertices, then either $G$ contains the edges $z_1x_2$ or $G$ contains the edge $y_1x_2$.  The first case is the case described above. The second case is handled in a symmetric way.
+\end{proof}
+
+\end{document}
+
+
