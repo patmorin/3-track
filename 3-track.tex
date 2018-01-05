@@ -132,10 +132,13 @@ and layered pathwidth, but with respect to $s$-weak layerings of $G$.
 \end{lem}
 
 \begin{proof}
-  Given an $s$-weak layered decomposition of $G$ with $s$-weak layering $\ell$, we define
-  $\ell'(v)=\lfloor\ell(v)/s\rfloor$. Now $\ell'$ is clearly a layering of $G$ and, by definition, for any bag $B_j$ and any $s$-weak layer $L_i=\{v\in V(G):\ell(v)=i\}$, $|L_i\cap B_j|\le \lpw_s(G)$.  Therefore, since
-  any layer $L_i'=\{v\in V(G):\ell'(v)=i\}$ is the union of $s$ weak layers,
-  $|L_i'\cap B_j|\le s\cdot\lpw_s(G)$ for all $i\in Z$.
+  Given an $s$-weak layered decomposition of $G$ with $s$-weak layering
+  $\ell$, we define $\ell'(v)=\lfloor\ell(v)/s\rfloor$. Now $\ell'$
+  is clearly a layering of $G$ and, by definition, for any bag $B_j$
+  and any $s$-weak layer $L_i=\{v\in V(G):\ell(v)=i\}$, $|L_i\cap B_j|\le
+  \lpw_s(G)$.  Therefore, since any layer $L_i'=\{v\in V(G):\ell'(v)=i\}$
+  is the union of $s$ weak layers, $|L_i'\cap B_j|\le s\cdot\lpw_s(G)$
+  for all $i\in Z$.
 \end{proof}
 
 Let $G$ be an edge maximal $n$-vertex graph with $\tr(G)=3$.  It is
@@ -164,7 +167,33 @@ the triangular face containing the origin and $x_{n_1},y_{n_2},z_{n_3}$
 form the cycle on the boundary of the outer face.
 From this point onward, all track indices are implicitly taken ``modulo 3''
 so that for any integer $i$, $T_i$ refers to the track $T_{i'}$ with
-index $i'=((i-1)\bmod 3)+1$.  \thmref{main} is a consequence of the
+index $i'=((i-1)\bmod 3)+1$.  
+
+The following observation follows from the fact that $G$ is edge maximal.
+\begin{obs}\obslabel{silly}
+  For any two vertices of $G$ on distinct tracks, say $x_i$ and $y_j$, at least
+  one of the following conditions is satisified (see \figref{3-cases}):
+  \begin{enumerate}
+    \item $x_iy_j\in E(G)$; or
+    \item there exists $x_{i'}y_{j'} \in E(G)$ with $i'>i$ and $j'<j$; or
+    \item there exists $x_iy_j'\in E(G)$ with $j'>j$.
+  \end{enumerate}
+\end{obs}
+
+\begin{figure}
+   \begin{center}
+     \begin{tabular}{ccc}
+       \includegraphics{figs/silly-1} &
+       \includegraphics{figs/silly-2} &
+       \includegraphics{figs/silly-3} \\
+       (1) & (2) & (3) 
+     \end{tabular}
+   \end{center}
+   \caption{The three cases in \obsref{silly}.}
+   \figlabel{3-cases}
+\end{figure}
+
+\thmref{main} is a consequence of the
 following lemma.
 
 \begin{lem}\lemlabel{main}
@@ -187,7 +216,7 @@ By \lemref{main}, therefore $G$ has $\lpw_4(G)=2$ and therefore, by
 \lemref{weak}, $\lpw(G)\le 8$.
 
 \begin{proof}[Proof of \lemref{main}]
-  Our proof is by induction on the number of vertices of $G$.  If
+  The proof is by induction on the number of vertices of $G$.  If
   $|V(G)|\le 4$, then the result is trivial.  Next, Suppose that $G$ has
   a cut set $C=\{x_i,y_j,z_k\}$ having exactly one vertex in each track.
   Since $G$ is edge maximal, $x_i,y_j,z_k$ form a cycle in $G$.  Now,
@@ -221,14 +250,16 @@ By \lemref{main}, therefore $G$ has $\lpw_4(G)=2$ and therefore, by
   each track, since its removal separates $y_1$ from $y_3$.
 
   Assume, without loss of generality, that $G$ contains the edge $z_1x_2$.
-  We will construct a winding path $P=v_1,\ldots,v_r$ starting with
-  $x_1,y_1,z_1,x_2$ and whose final three vertices are $x_{n_1}$,
+  We will construct a path $P=v_1,\ldots,v_r$, an example of which is illustrated in \figref{path}.
+  The first four vertices of $P$ are 
+  $x_1,y_1,z_1,x_2$ and the final three vertices are $x_{n_1}$,
   $y_{n_2}$, and $z_{n_3}$, though not necessarily in that order.
-  After the initial four vertices, the path is constructed greedily:
-  if the path has reached vertex $v_a$ on track $T_i$, it continues to
-  any neighbour $v_{a+1}$ of $v_a$ on track $T_{i+1}$.  An example is
-  illustrated in \figref{path}.
+  The path $P$ will \emph{spiral} in the sense that $v_i\in T_i$
+  for all $i\in\{1,\ldots,r\}$.  Observe that, since $P$ begins with
+  $x_1,y_1,z_1,x_2$, this spiralling implies that the subsequence of $P$ on any
+  track $T_i$ is increasing (getting further from the origin).
 
+  
   \begin{figure}
      \begin{center}
         \includegraphics{figs/path-2}
@@ -237,46 +268,79 @@ By \lemref{main}, therefore $G$ has $\lpw_4(G)=2$ and therefore, by
      \figlabel{path}
   \end{figure}
 
-  To see that this process does indeed produce the desired path, we
-  first claim that, for each $t\in \{1,\ldots,3\}$, the subsequence of
-  $P$ induced by $T_t$ is increasing. This can be proven by induction
-  the number of vertices added to $P$. Refer to \figref{combo}(a).
-  If $v_a=x_i$, then $v_{a-3}=x_{i'}$ with (by induction) $i'< i$.
-  Now, $P$ contains an edge $v_{a-3}v_{a-2}=x_{i'}y_{j'}$ for some $j'$.
-  The existence of this edge in $G$ ensures that the next vertex $v_{a+1}$
-  (if any) added to $P$ is $y_j$ for some $j > j'$.  (Using a vertex
-  $y_j$ with $j < j'$ would imply that $x_{i'}y_{j'}$ and $x_iy_j$
-  form an X-crossing.)
+  After the initial four vertices, $P$ is constructed greedily: if $P$
+  has reached vertex $v_k$, it continues to any neighbour $v_{k+1}$
+  of $v_k$ on track $T_{k+1}$ that is not yet in $P$.  
+  To see why this is always possible,
+  recall that $P$ already contains an edge $v_{k-3},v_{k-2}$. Now,
+  apply \obsref{silly} with $x_i=v_k$ and $y_j=v_{k-2}$, so there
+  are three cases (see \figref{sloppy}):
 
-  \begin{figure}
-    \begin{center}
-       \begin{tabular}{cc}
-         \includegraphics{figs/monotone} & \includegraphics{figs/closed} \\
-         (a) & (b)
-       \end{tabular}
-    \end{center}
-    \caption{Two steps in the proof of \lemref{main}: (a)~the sequence $P\cap T_2$ is monotone and (b)~the $v_{r-2},v_{r-1},v_r$ is a cycle.}
-    \figlabel{combo}
-  \end{figure}
+\begin{figure}
+   \begin{center}
+     \begin{tabular}{ccc}
+       \includegraphics{figs/sloppy-1} &
+       \includegraphics{figs/sloppy-2} &
+       \includegraphics{figs/sloppy-3} \\
+       (1) & (2) & (3) 
+     \end{tabular}
+   \end{center}
+   \caption{The path $P$ can always be extended.}
+   \figlabel{sloppy}
+\end{figure}
 
 
-  Next, we claim that
-  $\{v_{r-2},v_{r-1},v_{r}\}=\{x_{n_1},y_{n_2},z_{n_2}\}$. To see this,
-  suppose without loss of generality, that $v_r\in T_1$, so $v_r=x_i$
-  for some $i\in\{1,\ldots,n_1\}$. Refer to \figref{combo}(b). The only
-  reason $P$ ends at $x_i$ is that $x_i$ has no neighbour in $T_{2}$
-  that is not already in $P$.  Since $G$ is edge maximal, this already
-  implies that $v_{r-2}=y_{n_2}$, otherwise $v_r$ would have a neighbor
-  in $T_2$ that is not already in $P$.  Again, since $G$ is edge maximal,
-  this implies $v_r$ is adjacent to $v_{r-2}$.
+  \begin{enumerate}
+  \item $v_k v_{k-2}\in E(G)$.  In this
+  case $v_{k-2}$, $v_{k-1}$, and $v_k$ form a cycle in $G$.  Then either
+  $\{v_{k-2},v_{k-1},v_{k}\}=\{x_{n_1},y_{n_2},z_{n_3}\}$ or
+  $\{v_{k-2},v_{k-1},v_{k}\}$ is a cut set with exactly one vertex in
+  each track.  In the former case, the path $P$ is complete. The latter case is excluded by the assumption that $G$ contains no such cut sets.
 
-  Thus far, we have established that $v_{r-2},v_{r-1},v_{r}$ forms a
-  cycle $C$ and, in the planar embedding of $G$, $C$ separates $v_{r-3}$
-  (which is inside of $C$) from any vertices outside of $C$.  If there are
-  any vertices outside of $C$, this would make $C$ a cut set consisting
-  of one vertex from each track, which we have already ruled out.
-  Therefore, there are no vertices outside of $C$ and 
-  $C=x_{n_1},y_{n_2},z_{n_2}$, as claimed.
+  \item there exists an edge $x_{i'}y_{j'}\in E(G)$ with $i' > i$ and $j'< j$.  This case is not possible, since this edge would cross $v_{k-3}v_{k-2}$.
+
+  \item there exists an edge $x_i y_{j'}\in E(G)$ with $j' >j$.  In this case, $P$ is extended by adding $v_{k+1}=y_{j'}$.
+  \end{enumerate}
+%  To see that this process does indeed produce the desired path, we
+%  first claim that, for each $t\in \{1,\ldots,3\}$, the subsequence of
+%  $P$ induced by $T_t$ is increasing. This can be proven by induction
+%  the number of vertices added to $P$. Refer to \figref{combo}(a).
+%  If $v_a=x_i$, then $v_{a-3}=x_{i'}$ with (by induction) $i'< i$.
+%  Now, $P$ contains an edge $v_{a-3}v_{a-2}=x_{i'}y_{j'}$ for some $j'$.
+%  The existence of this edge in $G$ ensures that the next vertex $v_{a+1}$
+%  (if any) added to $P$ is $y_j$ for some $j > j'$.  (Using a vertex
+%  $y_j$ with $j < j'$ would imply that $x_{i'}y_{j'}$ and $x_iy_j$
+%  form an X-crossing.)
+%
+%  \begin{figure}
+%    \begin{center}
+%       \begin{tabular}{cc}
+%         \includegraphics{figs/monotone} & \includegraphics{figs/closed} \\
+%         (a) & (b)
+%       \end{tabular}
+%    \end{center}
+%    \caption{Two steps in the proof of \lemref{main}: (a)~the sequence $P\cap T_2$ is monotone and (b)~the $v_{r-2},v_{r-1},v_r$ is a cycle.}
+%    \figlabel{combo}
+%  \end{figure}
+%
+%
+%  Next, we claim that
+%  $\{v_{r-2},v_{r-1},v_{r}\}=\{x_{n_1},y_{n_2},z_{n_2}\}$. To see this,
+%  suppose without loss of generality, that $v_r\in T_1$, so $v_r=x_i$
+%  for some $i\in\{1,\ldots,n_1\}$. Refer to \figref{combo}(b). The only
+%  reason $P$ ends at $x_i$ is that $x_i$ has no neighbour in $T_{2}$
+%  that is not already in $P$.  Since $G$ is edge maximal, this already
+%  implies that $v_{r-2}=y_{n_2}$, otherwise $v_r$ would have a neighbor
+%  in $T_2$ that is not already in $P$.  Again, since $G$ is edge maximal,
+%  this implies $v_r$ is adjacent to $v_{r-2}$.
+%
+%  Thus far, we have established that $v_{r-2},v_{r-1},v_{r}$ forms a
+%  cycle $C$ and, in the planar embedding of $G$, $C$ separates $v_{r-3}$
+%  (which is inside of $C$) from any vertices outside of $C$.  If there are
+%  any vertices outside of $C$, this would make $C$ a cut set consisting
+%  of one vertex from each track, which we have already ruled out.
+%  Therefore, there are no vertices outside of $C$ and 
+%  $C=x_{n_1},y_{n_2},z_{n_2}$, as claimed.
 
   Thus we have constructed a path $P=v_1,\ldots,v_r$ whose first three
   vertices are $x_1,y_1,z_1$ and whose last three vertices are $x_{n_1}$,
@@ -296,10 +360,10 @@ By \lemref{main}, therefore $G$ has $\lpw_4(G)=2$ and therefore, by
   of the vertices are given by the layering $\ell$ defined above.
   Refer to \figref{prism}.  One way to see this is to imagine $G$
   as being drawn with its vertices on the three vertical edges of
-  a triangular prism so that $x_1,y_1,z_1$ are the vertices of one
+  a hollow triangular prism so that $x_1,y_1,z_1$ are the vertices of one
   triangular face and $x_{n_1},y_{n_2},z_{n_3}$ are the vertices of
-  the other triangular face.  Now, if we remove the top and bottom
-  faces of this prism, cut it along the embedding of $P$, and unfold
+  the other triangular face.  Now, if we remove the triangular faces
+  of this prism, cut it along the embedding of $P$, and unfold
   the resulting surface so that it lies in the plane, then we obtain a
   drawing of $G-P$ in which the vertices lie on a set of parallel lines
   and in which the edges only join vertices on two consecutive lines.
@@ -329,9 +393,9 @@ By \lemref{main}, therefore $G$ has $\lpw_4(G)=2$ and therefore, by
   \end{figure}
 
   By a result of Bannister \etal\ \cite[Proof of
-  Theorem~5]{bannister.devanny.ea:track}, this graph has a layered
-  path decomposition $B_1,\ldots,B_p$ of width 1 using layers
-  $L_1,\ldots,L_\ell$.  If we add the vertices of $P$ to every bag
+  Theorem~5]{bannister.devanny.ea:track}, $G-P$ has a layered
+  path decomposition $B_1,\ldots,B_p$ of width 1 using the layering 
+  $\ell$ defined above.  If we add the vertices of $P$ to every bag
   of this decomposition we obtain a width-2 4-weak layered path
   decomposition of $G$.  Finally, to satisfy Conditions 2 and 4 of
   the lemma, we prepend a bag $B_0=\{x_1,y_1,z_1\}$ and append a bag
@@ -341,36 +405,38 @@ By \lemref{main}, therefore $G$ has $\lpw_4(G)=2$ and therefore, by
 \section{Remarks}
 
 An obvious question is how far \thmref{main} can be generalized. As
-Bannister \etal\ \cite{bannister.devanny.ea:track} point out, it can not be generalized to graphs with
-track number 4; there exists graphs with track number 4 that have 
-unbounded layered pathwidth.
+Bannister \etal\ \cite{bannister.devanny.ea:track} point out, it can
+not be generalized to graphs with track number 4; there exists graphs
+with track number 4 that have unbounded layered pathwidth.
 
 Another generalization, that arises naturally from the standard planar
-drawing of 3-track graphs is the following. Refer to \figref{web}.  
-A \emph{$k$-web} is a
-graph that has a straight line drawing with its vertices placed on $k$
-concentric rays and such that every edge joins a pair of vertices on
-two consecutive rays.  The set of 3-webs is exactly the set of graphs
-with track-number at most 3.  Our proof of \lemref{main} generalizes in
-a straightforward manner to the following result:
+drawing of 3-track graphs is the following. Refer to \figref{web}.
+A \emph{$k$-web} is a graph that has a straight line drawing with its
+vertices placed on $k$ concentric rays and such that every edge joins a
+pair of vertices on two consecutive rays.  The set of 3-webs is exactly
+the set of graphs with track-number at most 3.  Our proof of \lemref{main}
+generalizes in a straightforward manner to the following result:
 
 \begin{figure}
   \begin{center}
     \includegraphics{figs/web}
   \end{center}
   \caption{An edge-maximal 7-web.}
+  \figlabel{web}
 \end{figure}
 
 \begin{thm}
    Every $k$-web $G$ has layered pathwidth at most $2(k+1)$.
 \end{thm}
 
+Is this dependence on $k$ asymptotically optimal, or even necessary?
+
 In our proof of \lemref{main} we use the trick of cutting a prism along
 a path $P$ in order to obtain a levelled planar drawing of $G-P$.
 Bannister \etal\ \cite{bannister.devanny.ea:track} use what, on the
 surface, appears to be a somewhat different method to obtain a levelled
 planar drawing of a bipartite 3-track graph.  In particular, they use
-an argument based on winding numbers.  These two techniques, however
+an argument based on winding numbers.  These two techniques, however,
 are not so different. Their winding-number argument shows (though not
 explicitly) that the standard drawing of a bipartite 3-track graph
 does not contain any cycle that contains the origin.  Thus, there is
